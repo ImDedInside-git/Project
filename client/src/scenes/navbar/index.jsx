@@ -20,13 +20,20 @@ import {
   Menu,
   Close,
   Refresh,
-  ExitToApp
+  ExitToApp,
+  Dashboard,
+  Home,
+  AddHome,
+  CurrencyRupee,
+  Reorder,
+  Book,
+  ManageHistory
 } from "@mui/icons-material";
 import { useDispatch, useSelector } from "react-redux";
 import { setMode, setLogout } from "state";
 import { useNavigate } from "react-router-dom";
 import FlexBetween from "components/FlexBetween";
-import logo from "../assets/logo.png"
+import logo from "../assets/logo2.png"
 import UserImage from "components/NavUserImage";
 
 
@@ -40,12 +47,19 @@ const Navbar = () => {
   const { _id, picturePath } = useSelector((state) => state.user);
 
 
+
   const theme = useTheme();
   const neutralLight = theme.palette.neutral.light;
   const dark = theme.palette.neutral.dark;
   const background = theme.palette.background.default;
   const primaryLight = theme.palette.primary.light;
   const alt = theme.palette.background.alt;
+
+  const { palette } = useTheme();
+  const medium = palette.neutral.medium;
+
+  
+
 
   const fullName = `${user.firstName} ${user.lastName}`;
 
@@ -54,7 +68,7 @@ const Navbar = () => {
     <FlexBetween padding="1rem 3%" backgroundColor={alt}>
       
       {!isNonMobileScreens && (
-        <><img src={logo} alt="Logo" style={{ width: "60px", height: "60px" }} />
+        <><img src={logo} alt="Logo" style={{ width: "50px", height: "50px" }} />
         <Typography
           fontWeight="bold"
           fontSize="clamp(0.75rem, 1.75rem, 2rem)"
@@ -68,6 +82,7 @@ const Navbar = () => {
           }}
         >
           Falcon Airlines
+          <Typography color={medium} mt="-0.5rem">&nbsp;&nbsp;&nbsp;Soar to new heights.™</Typography>
         </Typography>
         </>
       )}
@@ -90,26 +105,78 @@ const Navbar = () => {
             <img src={logo} alt="Logo" style={{ width: "60px", height: "60px" }} />
             <Typography
               fontWeight="bold"
-              fontSize="clamp(1rem, 2rem, 2.25rem)"
+              fontSize="clamp(1rem, 1.6rem, 2.25rem)"
               color="primary"
               onClick={() => navigate("/home")}
               sx={{
                 "&:hover": {
                   color: primaryLight,
+                  display: "flex",
+                  flexDirection: "column",
                   cursor: "pointer",
                 },
               }}
             >
               &nbsp;&nbsp;&nbsp;Falcon Airlines
+              <Typography color={medium} mt="-0.5rem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Soar to new heights.™</Typography>
             </Typography>
           </div>
+          
           </Typography>
+          {isNonMobileScreens && (
+          <FlexBetween
+            backgroundColor={neutralLight}
+            borderRadius="9px"
+            gap="3rem"
+            padding="0.1rem 1.5rem"
+          >
+            <InputBase placeholder="Search..." />
+            <IconButton>
+              <Search />
+            </IconButton>
+          </FlexBetween>
+        )}
+          
+          
         </FlexBetween>
       )}
+      
 
       {/* DESKTOP NAV */}
       {isNonMobileScreens ? (
-        <FlexBetween gap="2rem">
+        <FlexBetween gap="1.5rem">
+          
+          <IconButton onClick={() => navigate("/home")}>
+            {theme.palette.mode === "dark" ? (
+              <><Typography sx={{ fontSize: "20px" }} > Home </Typography></>
+            ) : (
+              <><Typography sx={{  fontSize: "20px" }} > Home </Typography> </>
+            )}
+          </IconButton>
+
+          <IconButton onClick={() => navigate("/book")}>
+            {theme.palette.mode === "dark" ? (
+              <><Typography sx={{ fontSize: "20px" }}> Book </Typography></>
+            ) : (
+              <><Typography sx={{ fontSize: "20px" }}> Book </Typography> </>
+            )}
+          </IconButton>
+
+          <IconButton onClick={() => navigate("")}>
+          {theme.palette.mode === "dark" ? (
+              <><Typography sx={{ fontSize: "20px" }} > Manage </Typography></>
+            ) : (
+              <><Typography sx={{  fontSize: "20px" }} > Manage </Typography> </>
+            )}
+          </IconButton>
+
+          <IconButton onClick={() => navigate("")}>
+          {theme.palette.mode === "dark" ? (
+              <><Typography sx={{ fontSize: "20px" }} > Check In </Typography></>
+            ) : (
+              <><Typography sx={{  fontSize: "20px" }} > Check In </Typography> </>
+            )}
+          </IconButton>
           
           <IconButton onClick={() => dispatch(setMode())}>
             {theme.palette.mode === "dark" ? (
@@ -118,9 +185,27 @@ const Navbar = () => {
               <LightMode sx={{ color: dark, fontSize: "25px" }} />
             )}
           </IconButton>
-          <Refresh sx={{ fontSize: "25px" }} onClick={() => window.location.reload()}/>
-          <Notifications sx={{ fontSize: "25px" }} />
-          <Help sx={{ fontSize: "25px" }} />
+          {/* <IconButton onClick={() => window.location.reload()}>
+            {theme.palette.mode === "dark" ? (
+              <Refresh sx={{ fontSize: "25px" }} />
+            ) : (
+              <Refresh sx={{ color: dark, fontSize: "25px" }} />
+            )}
+          </IconButton> */}
+          <IconButton>
+            {theme.palette.mode === "dark" ? (
+              <Notifications sx={{ fontSize: "25px" }} />
+            ) : (
+              <Notifications sx={{ color: dark, fontSize: "25px" }} />
+            )}
+          </IconButton>
+          {/* <IconButton>
+            {theme.palette.mode === "dark" ? (
+              <Help  sx={{ fontSize: "25px" }} />
+            ) : (
+              <Help  sx={{ color: dark, fontSize: "25px" }} />
+            )}
+          </IconButton> */}
           <FormControl variant="standard" value={fullName}>
             <Select
               value={fullName}
@@ -139,11 +224,11 @@ const Navbar = () => {
               }}
               input={<InputBase />}
             >
-              <MenuItem value={fullName}>
+              <MenuItem value={fullName} >
                 <UserImage image={picturePath} />
               </MenuItem>
               <MenuItem onClick={() => dispatch(setLogout())}>
-                <ExitToApp />&nbsp;&nbsp;&nbsp;Log Out
+              &nbsp;&nbsp;<ExitToApp />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Log Out
               </MenuItem>
             </Select>
           </FormControl>
@@ -187,19 +272,70 @@ const Navbar = () => {
             alignItems="center"
             gap="3rem"
           >
-            <IconButton
-              onClick={() => dispatch(setMode())}
-              sx={{ fontSize: "25px" }}
-            >
-              {theme.palette.mode === "dark" ? (
-                <DarkMode sx={{ fontSize: "25px" }} />
-              ) : (
-                <LightMode sx={{ color: dark, fontSize: "25px" }} />
-              )}
-            </IconButton>
-            <Refresh sx={{ fontSize: "25px" }} onClick={() => window.location.reload()} />
-            <Notifications sx={{ fontSize: "25px" }} />
-            <Help sx={{ fontSize: "25px" }} />
+            
+            <IconButton onClick={() => navigate("/home")}>
+            {theme.palette.mode === "dark" ? (
+              <><Typography sx={{ fontSize: "20px" }} > Home </Typography></>
+            ) : (
+              <><Typography sx={{  color: dark, fontSize: "20px" }} > Home </Typography> </>
+            )}
+          </IconButton>
+
+          <IconButton onClick={() => navigate("/book")}>
+            {theme.palette.mode === "dark" ? (
+              <><Typography sx={{ fontSize: "20px" }}> Book </Typography></>
+            ) : (
+              <><Typography sx={{ color: dark, fontSize: "20px" }}> Book </Typography> </>
+            )}
+          </IconButton>
+
+          <IconButton onClick={() => navigate("")}>
+          {theme.palette.mode === "dark" ? (
+              <><Typography sx={{ fontSize: "20px" }} > Manage </Typography></>
+            ) : (
+              <><Typography sx={{  color: dark, fontSize: "20px" }} > Manage </Typography> </>
+            )}
+          </IconButton>
+
+          <IconButton onClick={() => navigate("")}>
+          {theme.palette.mode === "dark" ? (
+              <><Typography sx={{ fontSize: "20px" }} > Check In </Typography></>
+            ) : (
+              <><Typography sx={{  color: dark, fontSize: "20px" }} > Check In </Typography> </>
+            )}
+          </IconButton>
+          
+          <IconButton onClick={() => dispatch(setMode())}>
+            {theme.palette.mode === "dark" ? (
+              <DarkMode sx={{ fontSize: "25px" }} />
+            ) : (
+              <LightMode sx={{ color: dark, fontSize: "25px" }} />
+            )}
+          </IconButton>
+          {/* <IconButton onClick={() => window.location.reload()}>
+            {theme.palette.mode === "dark" ? (
+              <Refresh sx={{ fontSize: "25px" }} />
+            ) : (
+              <Refresh sx={{ color: dark, fontSize: "25px" }} />
+            )}
+          </IconButton> */}
+          <IconButton>
+            {theme.palette.mode === "dark" ? (
+              <Notifications sx={{ fontSize: "25px" }} />
+            ) : (
+              <Notifications sx={{ color: dark, fontSize: "25px" }} />
+            )}
+          </IconButton>
+          {/* <IconButton>
+            {theme.palette.mode === "dark" ? (
+              <Help  sx={{ fontSize: "25px" }} />
+            ) : (
+              <Help  sx={{ color: dark, fontSize: "25px" }} />
+            )}
+          </IconButton> */}
+            {/* <Refresh sx={{ fontSize: "25px" }} onClick={() => window.location.reload()} /> */}
+            {/* <Notifications sx={{ fontSize: "25px" }} /> */}
+            {/* <Help sx={{ fontSize: "25px" }} /> */}
             <FormControl variant="standard" value={fullName}>
               <Select
                 value={fullName}

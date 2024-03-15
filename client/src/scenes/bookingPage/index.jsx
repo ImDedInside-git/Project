@@ -21,6 +21,8 @@ import FlexBetween from "components/FlexBetween";
 // import AdvertWidget from "scenes/widgets/AdvertWidget";
 // import FriendListWidget from "scenes/widgets/FriendListWidget";
 import Book from "./book.jsx";
+import Footer from "scenes/footer";
+
 
 const HomePage = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
@@ -97,6 +99,7 @@ const HomePage = () => {
           </Box>
         )}
       </Box> */}
+      <Footer />
     </Box>
   );
 };

@@ -1,6 +1,7 @@
 import { Box, useMediaQuery } from "@mui/material";
 import { useSelector } from "react-redux";
 import Navbar from "scenes/navbar";
+import Footer from "scenes/footer";
 import UserWidget from "scenes/widgets/UserWidget";
 import MyPostWidget from "scenes/widgets/MyPostWidget";
 import PostsWidget from "scenes/widgets/PostsWidget";
@@ -19,15 +20,31 @@ const HomePage = () => {
       
       <Box
         width="100%"
-        padding="2rem 6%"
+        padding={isNonMobileScreens ? "4rem 3%" : "1.3rem 3%"}
         display={isNonMobileScreens ? "flex" : "block"}
         gap="0.5rem"
         justifyContent="space-between"
       >
-        <Box flexBasis={isNonMobileScreens ? "66%" : undefined}>
-          {/* <UserWidget userId={_id} picturePath={picturePath} /> */}
-          {/* <Book /> */}
-          <HomeWidget userId={_id} picturePath={picturePath} />
+        <Box flexBasis={isNonMobileScreens ? "62%" : undefined}>
+          {!isNonMobileScreens && (
+            <>
+
+            
+              <BookingWidget />
+
+            </>
+          )}
+
+          <Box
+              flexBasis={isNonMobileScreens ? "42%" : undefined}
+              mt={isNonMobileScreens ? undefined : "2rem"}
+          >
+            {/* <UserWidget userId={_id} picturePath={picturePath} /> */}
+            {/* <Book /> */}
+            <HomeWidget userId={_id} picturePath={picturePath} />
+          
+          </Box>
+          
         </Box>
         {/* <Box
           flexBasis={isNonMobileScreens ? "42%" : undefined}
@@ -38,7 +55,7 @@ const HomePage = () => {
         </Box> */}
         {isNonMobileScreens && (
           <Box 
-            flexBasis={isNonMobileScreens ? "32%" : undefined}
+            flexBasis={isNonMobileScreens ? "35%" : undefined}
             mt={isNonMobileScreens ? undefined : "2rem"}>
             <BookingWidget />
             <Box m="2rem 0" />
@@ -46,6 +63,7 @@ const HomePage = () => {
           </Box>
         )}
       </Box>
+      <Footer />
     </Box>
   );
 };

@@ -21,34 +21,23 @@ import loader from "./loader.css"
 
 
 const bookSchema = yup.object().shape({
-  from: yup.string().required("Required"),
-  to: yup.string().required("Required"),
-  email: yup.string().email("Invalid email").required("Required"),
-  password: yup.string().required("Required"),
-  location: yup.string().required("Required"),
-  occupation: yup.string().required("Required"),
-  picture: yup.string().required("Required"),
+  From: yup.string().required("Required"),
+  To: yup.string().required("Required"),
+  Class: yup.string().required("Required"),
+  departureDate: yup.string().required("Required"),
+  returnDate: yup.string().required("Required"),
 });
 
-const loginSchema = yup.object().shape({
-  email: yup.string().email("invalid email").required("Email ID required"),
-  password: yup.string().required("Password required"),
-});
 
-const initialValuesRegister = {
-  firstName: "",
-  lastName: "",
-  email: "",
-  password: "",
-  location: "",
-  occupation: "",
-  picture: "",
+const initialValues = {
+  from: "",
+  to: "",
+  class: "",
+  departureDate: "",
+  returnDate: "",
 };
 
-const initialValuesLogin = {
-  email: "",
-  password: "",
-};
+
 
 const Book = () => {
   const [pageType, setPageType] = useState("login");
@@ -82,7 +71,7 @@ const Book = () => {
     }
   };
 
-  const login = async (values, onSubmitProps) => {
+  const checkFlights = async (values, onSubmitProps) => {
     const loggedInResponse = await fetch("http://localhost:3001/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -102,14 +91,13 @@ const Book = () => {
   };
 
   const handleFormSubmit = async (values, onSubmitProps) => {
-    if (isLogin) await login(values, onSubmitProps);
-    if (isRegister) await register(values, onSubmitProps);
+    await checkFlights(values, onSubmitProps);
   };
 
 return (
     <Formik
         onSubmit={handleFormSubmit}
-        initialValues={isLogin ? initialValuesLogin : initialValuesRegister}
+        initialValues={initialValues}
         validationSchema={ bookSchema }
     >
         {({
@@ -143,7 +131,7 @@ return (
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.role}
-                name="from"
+                name="From"
                 error={Boolean(touched.role) && Boolean(errors.role)}
                 helperText={touched.role && errors.role}
                 sx={{ gridColumn: "span 2" }}
@@ -186,7 +174,7 @@ return (
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.role}
-                name="role"
+                name="Class"
                 error={Boolean(touched.role) && Boolean(errors.role)}
                 helperText={touched.role && errors.role}
                 sx={{ gridColumn: "span 4" }}

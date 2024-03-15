@@ -12,13 +12,14 @@ import {
   Help,
   Menu,
   Close,
-  Refresh
+  Refresh,
+  Notifications
 } from "@mui/icons-material";
 import { useDispatch } from "react-redux";
 import { setMode } from "state";
 import { useNavigate } from "react-router-dom";
 import FlexBetween from "components/FlexBetween";
-import logo from "../assets/logo.png"
+import logo from "../assets/logo2.png"
 
 
 const Navbar = () => {
@@ -32,6 +33,9 @@ const Navbar = () => {
   const background = theme.palette.background.default;
   const primaryLight = theme.palette.primary.light;
   const alt = theme.palette.background.alt;
+
+  const { palette } = useTheme();
+  const medium = palette.neutral.medium;
 
   return (
     
@@ -73,17 +77,20 @@ const Navbar = () => {
             <img src={logo} alt="Logo" style={{ width: "60px", height: "60px" }} />
             <Typography
               fontWeight="bold"
-              fontSize="clamp(1rem, 2rem, 2.25rem)"
+              fontSize="clamp(1rem, 1.6rem, 2.25rem)"
               color="primary"
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/home")}
               sx={{
                 "&:hover": {
                   color: primaryLight,
+                  display: "flex",
+                  flexDirection: "column",
                   cursor: "pointer",
                 },
               }}
             >
               &nbsp;&nbsp;&nbsp;Falcon Airlines
+              <Typography color={medium} mt="-0.5rem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Soar to new heights™</Typography>
             </Typography>
           </div>
           </Typography>
@@ -101,8 +108,27 @@ const Navbar = () => {
               <LightMode sx={{ color: dark, fontSize: "25px" }} />
             )}
           </IconButton>
-          <Refresh sx={{ fontSize: "25px" }} onClick={() => window.location.reload()}/>
-          <Help sx={{ fontSize: "25px" }} />
+          <IconButton onClick={() => window.location.reload()}>
+            {theme.palette.mode === "dark" ? (
+              <Refresh sx={{ fontSize: "25px" }} />
+            ) : (
+              <Refresh sx={{ color: dark, fontSize: "25px" }} />
+            )}
+          </IconButton>
+          <IconButton>
+            {theme.palette.mode === "dark" ? (
+              <Notifications sx={{ fontSize: "25px" }} />
+            ) : (
+              <Notifications sx={{ color: dark, fontSize: "25px" }} />
+            )}
+          </IconButton>
+          <IconButton>
+            {theme.palette.mode === "dark" ? (
+              <Help  sx={{ fontSize: "25px" }} />
+            ) : (
+              <Help  sx={{ color: dark, fontSize: "25px" }} />
+            )}
+          </IconButton>
           
         </FlexBetween>
       ) : (

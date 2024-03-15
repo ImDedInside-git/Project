@@ -15,7 +15,7 @@ const BookingWidget = () => {
         <Typography color={dark} variant="h5" fontWeight="500" sx={{ mb: "2rem"}}>
           Your journey starts with us.
         </Typography>
-        <Typography color={medium} sx={{ mb: "2rem"}}>Lorem Ipsum</Typography>
+        <Typography color={medium} sx={{ mb: "2rem"}}>01FE22BCA081</Typography>
       </FlexBetween>
       {/* <img
         width="100%"
@@ -29,9 +29,9 @@ const BookingWidget = () => {
         <Typography color={main}>MikaCosmetics</Typography>
         <Typography color={medium}>mikacosmetics.com</Typography>
       </FlexBetween> */}
-      <Typography color={medium} m="0.5rem 0">
-        Wherever you want to go, we’ll take you there with Falcon Airlines.
-      </Typography>
+      {/* <Typography color={medium} m="0.5rem 0">
+        Wherever you want to go, we’ll take you there.
+      </Typography> */}
     </WidgetWrapper>
   );
 };

@@ -42,13 +42,14 @@ const ContactWidget = ({ userId }) => {
       </Typography>
       <Box display="flex" flexDirection="column" gap="0.5rem">
         <Typography color={dark}>
-          <span style={{ fontWeight: 500 }}>Email:</span> <a href="mailto:support@falconairlines.bh">support@falconairlines.bh</a>
+          <span style={{ fontWeight: 500 }}>Email:</span>&nbsp; <a href="mailto:support@falconairlines.bh" style={{ color: dark }}>support@falconairlines.bh</a>
+
         </Typography>
         <Typography color={dark}>
-        <span style={{ fontWeight: 500 }}>Telephone:</span> +973 1757 7700 <span color={medium} style={{ fontWeight: 100 }}>(Toll Free)</span>
+        <span style={{ fontWeight: 500 }}>Telephone:</span>&nbsp; +973 1757 7700 <span color={medium} style={{ fontWeight: 100 }}>(Toll Free)</span>
         </Typography>
         <Typography color={dark}>
-        <span style={{ fontWeight: 500 }}>Address:</span> 855 Falcon Way, Al-Hidd, Bahrain
+        <span style={{ fontWeight: 500 }}>Address:</span>&nbsp; 855 Falcon Way, Al-Hidd, Bahrain
         </Typography>
       </Box>
     </WidgetWrapper>
