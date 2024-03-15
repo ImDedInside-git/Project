@@ -22,7 +22,7 @@ const Footer = () => {
   
 
   const { palette } = useTheme();
-  const medium = palette.neutral.medium;
+  const medium = palette.nbg.medium;
   const isNonMobileScreens = useMediaQuery("(min-width: 700px)");
 
   const currentYear = new Date().getFullYear();
@@ -88,13 +88,13 @@ const Footer = () => {
             <Typography color={medium} fontSize="15px"> &nbsp;</Typography>
             <Typography color={medium} fontSize="10px"> </Typography>
             <Typography color={medium} fontSize="20px">
-              <a href="https://www.facebook.com/falconairlines" style={{ color: medium }}><Facebook sx={{ fontSize: "40px" }}/></a>
+              <a href="https://www.facebook.com/falconairlines" style={{ color: medium }}><Facebook sx={{ fontSize: "35px" }}/></a>
             </Typography>
             <Typography color={medium} fontSize="30px">
-              <a href="https://twitter.com/falconairlines" style={{ color: medium }}><Twitter sx={{ fontSize: "40px" }}/></a>
+              <a href="https://twitter.com/falconairlines" style={{ color: medium }}><Twitter sx={{ fontSize: "35px" }}/></a>
             </Typography>
             <Typography color={medium} fontSize="30px">
-              <a href="https://instagram.com/falconairlines" style={{ color: medium }}><Instagram sx={{ fontSize: "40px" }}/></a>
+              <a href="https://instagram.com/falconairlines" style={{ color: medium }}><Instagram sx={{ fontSize: "35px" }}/></a>
             </Typography>
           </Box>
         </Grid>
