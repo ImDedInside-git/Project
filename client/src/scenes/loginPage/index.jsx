@@ -17,7 +17,7 @@ const LoginPage = () => {
         width={isNonMobileScreens ? "50%" : "93%"}
         p={isNonMobileScreens ? "2rem" : "1.5rem"}
         m={isNonMobileScreens ? "4rem auto" : "1rem auto"}
-        borderRadius={isNonMobileScreens ? "2.5rem" : "1rem"}
+        borderRadius={isNonMobileScreens ? "1.5rem" : "1rem"}
         backgroundColor={theme.palette.background.alt}
       >
         <Typography fontWeight="500" variant="h5" sx={{ mb: "2.5rem" }}>

@@ -90,7 +90,7 @@ const Navbar = () => {
               }}
             >
               &nbsp;&nbsp;&nbsp;Falcon Airlines
-              <Typography color={medium} mt="-0.5rem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Soar to new heights™</Typography>
+              <Typography color={medium} mt="-0.5rem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Soar to new heights.™</Typography>
             </Typography>
           </div>
           </Typography>
@@ -103,16 +103,11 @@ const Navbar = () => {
           
           <IconButton onClick={() => dispatch(setMode())}>
             {theme.palette.mode === "dark" ? (
-              <DarkMode sx={{ fontSize: "25px" }} />
+              <>
+              <DarkMode sx={{ fontSize: "25px" }} />&nbsp; Accessablity </>
             ) : (
-              <LightMode sx={{ color: dark, fontSize: "25px" }} />
-            )}
-          </IconButton>
-          <IconButton onClick={() => window.location.reload()}>
-            {theme.palette.mode === "dark" ? (
-              <Refresh sx={{ fontSize: "25px" }} />
-            ) : (
-              <Refresh sx={{ color: dark, fontSize: "25px" }} />
+              <>
+              <LightMode sx={{ color: dark, fontSize: "25px" }} />&nbsp; Accessablity </>
             )}
           </IconButton>
           <IconButton>
@@ -178,7 +173,6 @@ const Navbar = () => {
                 <LightMode sx={{ color: dark, fontSize: "25px" }} />
               )}
             </IconButton>
-            <Help sx={{ fontSize: "25px" }} />
           </FlexBetween>
         </Box>
       )}
