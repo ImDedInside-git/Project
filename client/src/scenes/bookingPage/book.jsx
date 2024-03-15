@@ -179,8 +179,8 @@ return (
                 helperText={touched.role && errors.role}
                 sx={{ gridColumn: "span 4" }}
             >
-                <MenuItem value="F">First Class</MenuItem>
-                <MenuItem value="B">Business</MenuItem>
+                <MenuItem value="F">Falcon Elite (First Class)</MenuItem>
+                <MenuItem value="B">Falcon Executive (Business Class)</MenuItem>
                 <MenuItem value="E">Economy</MenuItem>
             </TextField>
 
