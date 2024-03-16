@@ -1,7 +1,7 @@
 import { Typography, useTheme } from "@mui/material";
 import FlexBetween from "components/FlexBetween";
 import WidgetWrapper from "components/WidgetWrapper";
-import Book from "../bookingPage/book.jsx";
+import Book from "../../components/book.jsx";
 
 const BookingWidget = () => {
   const { palette } = useTheme();

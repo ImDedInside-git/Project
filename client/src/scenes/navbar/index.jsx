@@ -34,7 +34,9 @@ import { setMode, setLogout } from "state";
 import { useNavigate } from "react-router-dom";
 import FlexBetween from "components/FlexBetween";
 import logo from "../assets/logo2.png"
-import UserImage from "components/NavUserImage";
+import NavUserImage from "components/NavUserImage";
+import UserImage from "components/UserImage";
+
 
 
 
@@ -43,7 +45,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
-  const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
+  const isNonMobileScreens = useMediaQuery("(min-width: 1345px)");
   const { _id, picturePath } = useSelector((state) => state.user);
 
 
@@ -65,10 +67,10 @@ const Navbar = () => {
 
   return (
     
-    <FlexBetween padding="1rem 3%" backgroundColor={alt}>
+    <FlexBetween padding="1rem 3%" backgroundColor={alt} >
       
       {!isNonMobileScreens && (
-        <><img src={logo} alt="Logo" style={{ width: "50px", height: "50px" }} />
+        <><img src={logo} alt="Logo" style={{ width: "60px", height: "60px" }} />
         <Typography
           fontWeight="bold"
           fontSize="clamp(0.75rem, 1.75rem, 2rem)"
@@ -82,7 +84,7 @@ const Navbar = () => {
           }}
         >
           Falcon Airlines
-          <Typography color={medium} mt="-0.5rem">&nbsp;&nbsp;&nbsp;Soar to new heights.™</Typography>
+          <Typography color={medium} mt="-0.5rem">&nbsp;&nbsp;&nbsp;Soar to new heights.&#8482;</Typography>
         </Typography>
         </>
       )}
@@ -118,7 +120,7 @@ const Navbar = () => {
               }}
             >
               &nbsp;&nbsp;&nbsp;Falcon Airlines
-              <Typography color={medium} mt="-0.5rem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Soar to new heights.™</Typography>
+              <Typography color={medium} mt="-0.5rem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Soar to new heights.&#8482;</Typography>
             </Typography>
           </div>
           
@@ -162,13 +164,13 @@ const Navbar = () => {
             )}
           </IconButton>
 
-          <IconButton onClick={() => navigate("")}>
+          {/* <IconButton onClick={() => navigate("")}>
           {theme.palette.mode === "dark" ? (
               <><Typography sx={{ fontSize: "20px" }} > Manage </Typography></>
             ) : (
               <><Typography sx={{  fontSize: "20px" }} > Manage </Typography> </>
             )}
-          </IconButton>
+          </IconButton> */}
 
           <IconButton onClick={() => navigate("")}>
           {theme.palette.mode === "dark" ? (
@@ -225,7 +227,7 @@ const Navbar = () => {
               input={<InputBase />}
             >
               <MenuItem value={fullName} >
-                <UserImage image={picturePath} />
+                <NavUserImage image={picturePath} />
               </MenuItem>
               <MenuItem onClick={() => dispatch(setLogout())}>
               &nbsp;&nbsp;<ExitToApp />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Log Out
@@ -254,6 +256,18 @@ const Navbar = () => {
           maxWidth="500px"
           minWidth="200px"
           backgroundColor={background}
+          style={{
+            position: "fixed",
+            right: 0,
+            bottom: 0,
+            top: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: isNonMobileScreens && isMobileMenuToggled ? "rgba(255, 255, 255, 0.5)" : "rgba(255, 255, 255, 0)",
+            backdropFilter: "blur(8px)",
+            transition: "background-color 0.3s ease",
+          }}
+          
         >
           {/* CLOSE ICON */}
           <Box display="flex" justifyContent="center" p="3rem">
@@ -289,13 +303,13 @@ const Navbar = () => {
             )}
           </IconButton>
 
-          <IconButton onClick={() => navigate("")}>
+          {/* <IconButton onClick={() => navigate("")}>
           {theme.palette.mode === "dark" ? (
               <><Typography sx={{ fontSize: "20px" }} > Manage </Typography></>
             ) : (
               <><Typography sx={{  color: dark, fontSize: "20px" }} > Manage </Typography> </>
             )}
-          </IconButton>
+          </IconButton> */}
 
           <IconButton onClick={() => navigate("")}>
           {theme.palette.mode === "dark" ? (
@@ -326,6 +340,7 @@ const Navbar = () => {
               <Notifications sx={{ color: dark, fontSize: "25px" }} />
             )}
           </IconButton>
+          <UserImage image={picturePath} />
           {/* <IconButton>
             {theme.palette.mode === "dark" ? (
               <Help  sx={{ fontSize: "25px" }} />

@@ -20,7 +20,7 @@ import FlexBetween from "components/FlexBetween";
 // import PostsWidget from "scenes/widgets/PostsWidget";
 // import AdvertWidget from "scenes/widgets/AdvertWidget";
 // import FriendListWidget from "scenes/widgets/FriendListWidget";
-import Book from "./book.jsx";
+import Book from "../../components/book.jsx";
 import Footer from "scenes/footer";
 
 

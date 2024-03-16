@@ -90,7 +90,7 @@ const Navbar = () => {
               }}
             >
               &nbsp;&nbsp;&nbsp;Falcon Airlines
-              <Typography color={medium} mt="-0.5rem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Soar to new heights.™</Typography>
+              <Typography color={medium} mt="-0.5rem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Soar to new heights.&#8482;</Typography>
             </Typography>
           </div>
           </Typography>
@@ -145,6 +145,17 @@ const Navbar = () => {
           maxWidth="500px"
           minWidth="200px"
           backgroundColor={background}
+          style={{
+            position: "fixed",
+            right: 0,
+            bottom: 0,
+            top: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: isNonMobileScreens && isMobileMenuToggled ? "rgba(255, 255, 255, 0.5)" : "rgba(255, 255, 255, 0)",
+            backdropFilter: "blur(8px)",
+            transition: "background-color 0.3s ease",
+          }}
         >
           {/* CLOSE ICON */}
           <Box display="flex" justifyContent="center" p="3rem">
@@ -168,9 +179,37 @@ const Navbar = () => {
               sx={{ fontSize: "25px" }}
             >
               {theme.palette.mode === "dark" ? (
-                <DarkMode sx={{ fontSize: "25px" }} />
+                <>
+                <DarkMode sx={{ fontSize: "25px" }} /> <Typography sx={{  color: dark, fontSize: "20px" }} > &nbsp; Accessibility </Typography></>
               ) : (
-                <LightMode sx={{ color: dark, fontSize: "25px" }} />
+                <>
+                <LightMode sx={{ color: dark, fontSize: "25px" }} /> <Typography sx={{  color: dark, fontSize: "20px" }} > &nbsp; Accessibility </Typography></>
+              )}
+            </IconButton>
+            
+            <IconButton
+              onClick={() => dispatch()}
+              sx={{ fontSize: "25px" }}
+            >
+              {theme.palette.mode === "dark" ? (
+                <>
+                <Notifications sx={{ fontSize: "25px" }} /> <Typography sx={{  color: dark, fontSize: "20px" }} > &nbsp; Announcements </Typography></>
+              ) : (
+                <>
+                <Notifications sx={{ color: dark, fontSize: "25px" }} /> <Typography sx={{  color: dark, fontSize: "20px" }} > &nbsp; Announcements </Typography></>
+              )}
+            </IconButton>
+
+            <IconButton
+              onClick={() => dispatch()}
+              sx={{ fontSize: "25px" }}
+            >
+              {theme.palette.mode === "dark" ? (
+                <>
+                <Help sx={{ fontSize: "25px" }} /> <Typography sx={{  color: dark, fontSize: "20px" }} > &nbsp; Help </Typography></>
+              ) : (
+                <>
+                <Help sx={{ color: dark, fontSize: "25px" }} /> <Typography sx={{  color: dark, fontSize: "20px" }} > &nbsp; Help </Typography></>
               )}
             </IconButton>
           </FlexBetween>

@@ -16,8 +16,6 @@ import { setLogin } from "state";
 import Dropzone from "react-dropzone";
 import FlexBetween from "components/FlexBetween";
 import { MenuItem } from "@mui/material";
-import loader from "./loader.css"
-
 
 
 const bookSchema = yup.object().shape({
@@ -243,8 +241,6 @@ return (
                 color: palette.background.alt,
                 "&:hover": { color: palette.primary.main },
               }}
-              onClick={ <div class="loader">
-            </div> }
             >
               CHECK AVAILABLITY
             </Button>

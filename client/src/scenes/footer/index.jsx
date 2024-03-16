@@ -52,7 +52,7 @@ const Footer = () => {
               }}
             >
               &nbsp;&nbsp;&nbsp;Falcon Airlines
-              <Typography color={medium} mt="-0.5rem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Soar to new heights.™</Typography>
+              <Typography color={medium} mt="-0.5rem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Soar to new heights.&#8482;</Typography>
             </Typography>
         </Grid>
 
@@ -148,15 +148,12 @@ const Footer = () => {
           {/* Footer Information */}
           <Box textAlign="center" padding="0.2rem" backgroundColor={neutralDark} width="100%">
             <Typography color={medium} fontSize="14px">
-              <strong>&copy; {currentYear} Falcon Air. All rights reserved.</strong>
+              <strong>&copy; {currentYear} Falcon Airlines. All rights reserved.</strong>
             </Typography>
             <Typography color={medium} fontSize="14px" mt="0.5rem">
-              Designed by ImDedInside
+              <a href="https://github.com/ImDedInside-git" style={{ color: medium }}>Designed by ImDedInside</a>
             </Typography>
-            <Typography color={medium} fontSize="14px" mt="0.5rem"> </Typography>
-            <Typography color={medium} fontSize="14px" mt="0.5rem"> </Typography>
-            <Typography color={medium} fontSize="14px" mt="0.5rem"> </Typography>
-            <Typography color={medium} fontSize="14px" mt="0.5rem"> </Typography>
+            <Typography color={medium} fontSize="14px" mt="0.5rem">&nbsp;</Typography>
 
           </Box>
         </Grid>

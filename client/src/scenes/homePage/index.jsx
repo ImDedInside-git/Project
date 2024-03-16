@@ -8,7 +8,8 @@ import PostsWidget from "scenes/widgets/PostsWidget";
 import BookingWidget from "scenes/widgets/BookingWidget";
 import FriendListWidget from "scenes/widgets/ContactWidget";
 import HomeWidget from "scenes/widgets/HomeWidget";
-import Book from "scenes/bookingPage/book.jsx";
+import Book from "components/book.jsx";
+import Slideshow from "scenes/widgets/Slideshow";
 
 const HomePage = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
@@ -17,6 +18,7 @@ const HomePage = () => {
   return (
     <Box>
       <Navbar />
+      <Slideshow />
       
       <Box
         width="100%"
@@ -25,6 +27,8 @@ const HomePage = () => {
         gap="0.5rem"
         justifyContent="space-between"
       >
+        {/* <Slideshow /> */}
+
         <Box flexBasis={isNonMobileScreens ? "62%" : undefined}>
           {!isNonMobileScreens && (
             <>
