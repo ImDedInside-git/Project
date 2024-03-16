@@ -35,8 +35,10 @@ const Footer = () => {
       <Grid container spacing={3} justifyContent="center">
 
         {/* Branding */}
-        <Grid item xs={12} sm={6} md={3.5}>
-        <img src={logo} alt="Logo" style={{ width: "80px", height: "80px" }} />
+        <Grid item xs={12} sm={6} md={2.5}>
+        <Box textAlign="left" padding="1rem" backgroundColor={neutralDark}>
+
+        <img src={logo} alt="Logo" style={{ width: "110px", height: "110px" }} />
             <Typography
               fontWeight="bold"
               fontSize="clamp(1rem, 1.6rem, 2.25rem)"
@@ -54,6 +56,7 @@ const Footer = () => {
               &nbsp;&nbsp;&nbsp;Falcon Airlines
               <Typography color={medium} mt="-0.5rem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Soar to new heights.&#8482;</Typography>
             </Typography>
+          </Box>
         </Grid>
 
 
