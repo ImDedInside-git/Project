@@ -20,10 +20,9 @@ Welcome to Falcon Airlines, a flight booking website developed as a Minor Projec
 ![Login1](https://github.com/ImDedInside-git/Project/assets/67794677/6643114b-27c6-4ce4-b146-c049e5365677)
 ![Login2](https://github.com/ImDedInside-git/Project/assets/67794677/5f05da8c-03ae-43b4-901b-9991a2a71414)
 ![Home1](https://github.com/ImDedInside-git/Project/assets/67794677/e00ee56b-1b9e-4289-b408-32fb800b0d7e)
-![Home2](https://github.com/ImDedInside-git/Project/assets/67794677/d116e10a-d1ad-4048-b2af-ff8095bc4a81)
-![Home3](https://github.com/ImDedInside-git/Project/assets/67794677/81df667c-ad20-454c-9cc8-180ad4947a70)
-![Home4](https://github.com/ImDedInside-git/Project/assets/67794677/81f4a24c-6a7e-43fd-ab9d-984e232461b8)
-![Home5](https://github.com/ImDedInside-git/Project/assets/67794677/6b33a292-4855-4919-be8f-0425448018c9)
+![Home2](https://github.com/ImDedInside-git/Project/assets/67794677/81df667c-ad20-454c-9cc8-180ad4947a70)
+![Home3](https://github.com/ImDedInside-git/Project/assets/67794677/81f4a24c-6a7e-43fd-ab9d-984e232461b8)
+![Home4](https://github.com/ImDedInside-git/Project/assets/67794677/6b33a292-4855-4919-be8f-0425448018c9)
 ![Home5](https://github.com/ImDedInside-git/Project/assets/67794677/c0e54232-29e9-49be-872d-0d93b222951d)
 
 ### Mobile
