@@ -38,7 +38,16 @@ const Footer = () => {
         <Grid item xs={12} sm={6} md={2.5}>
         <Box textAlign="left" padding="1rem" backgroundColor={neutralDark}>
 
-        <img src={logo} alt="Logo" style={{ width: "110px", height: "110px" }} />
+        {isNonMobileScreens && (
+          <>
+          <img src={logo} alt="Logo" style={{ width: "110px", height: "110px" }} />
+          </>
+        )}
+        {!isNonMobileScreens && (
+          <>
+          &nbsp;&nbsp;&nbsp;<img src={logo} alt="Logo" style={{ width: "60px", height: "60px" }} />
+          </>
+        )}
             <Typography
               fontWeight="bold"
               fontSize="clamp(1rem, 1.6rem, 2.25rem)"
