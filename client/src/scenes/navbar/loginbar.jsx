@@ -104,7 +104,7 @@ const Navbar = () => {
           <IconButton onClick={() => dispatch(setMode())}>
             {theme.palette.mode === "dark" ? (
               <>
-              <DarkMode sx={{ fontSize: "25px" }} />&nbsp; Accessablity </>
+              <DarkMode sx={{ fontSize: "25px" }} />&nbsp; Accessibility </>
             ) : (
               <>
               <LightMode sx={{ color: dark, fontSize: "25px" }} />&nbsp; Accessablity </>
