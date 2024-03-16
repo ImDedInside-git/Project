@@ -15,7 +15,7 @@ const BookingWidget = () => {
         <Typography color={dark} variant="h5" fontWeight="500" sx={{ mb: "2rem"}}>
           Your journey starts with us.
         </Typography>
-        <Typography color={medium} sx={{ mb: "2rem"}}>01FE22BCA081</Typography>
+        <Typography color={medium} sx={{ mb: "2rem"}}>imdedinside</Typography>
       </FlexBetween>
       {/* <img
         width="100%"
