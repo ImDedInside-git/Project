@@ -1,8 +1,9 @@
 import {
   ManageAccountsOutlined,
-  EditOutlined,
+  // EditOutlined,
   LocationOnOutlined,
   WorkOutlineOutlined,
+  Email,
 } from "@mui/icons-material";
 import { Box, Typography, Divider, useTheme } from "@mui/material";
 import UserImage from "components/UserImage";
@@ -41,11 +42,10 @@ const UserWidget = ({ userId, picturePath }) => {
   const {
     firstName,
     lastName,
+    email,
     location,
     occupation,
-    viewedProfile,
-    impressions,
-    friends,
+    impressions
   } = user;
 
   return (
@@ -54,7 +54,7 @@ const UserWidget = ({ userId, picturePath }) => {
       <FlexBetween
         gap="0.5rem"
         pb="1.1rem"
-        onClick={() => navigate(`/profile/${userId}`)}
+        // onClick={() => navigate(`/profile/${userId}`)}
       >
         <FlexBetween gap="1rem">
           <UserImage image={picturePath} />
@@ -72,7 +72,6 @@ const UserWidget = ({ userId, picturePath }) => {
             >
               {firstName} {lastName}
             </Typography>
-            <Typography color={medium}>{friends.length} friends</Typography>
           </Box>
         </FlexBetween>
         <ManageAccountsOutlined />
@@ -86,6 +85,15 @@ const UserWidget = ({ userId, picturePath }) => {
           <LocationOnOutlined fontSize="large" sx={{ color: main }} />
           <Typography color={medium}>{location}</Typography>
         </Box>
+        <FlexBetween gap="1rem" mb="0.5rem">
+          <FlexBetween gap="1rem">
+            <Email fontSize="large" sx={{ color: main }} />
+            <Box>
+              <Typography color={medium}> {email} </Typography>
+            </Box>
+          </FlexBetween>
+          {/* <EditOutlined sx={{ color: main }} /> */}
+        </FlexBetween>
         <Box display="flex" alignItems="center" gap="1rem">
           <WorkOutlineOutlined fontSize="large" sx={{ color: main }} />
           <Typography color={medium}>{occupation}</Typography>
@@ -96,21 +104,13 @@ const UserWidget = ({ userId, picturePath }) => {
 
       {/* THIRD ROW */}
       <Box p="1rem 0">
-        <FlexBetween mb="0.5rem">
-          <Typography color={medium}>Who's viewed your profile</Typography>
-          <Typography color={main} fontWeight="500">
-            {viewedProfile}
-          </Typography>
-        </FlexBetween>
         <FlexBetween>
-          <Typography color={medium}>Impressions of your post</Typography>
+          <Typography color={medium}>Your Falcon travel points</Typography>
           <Typography color={main} fontWeight="500">
             {impressions}
           </Typography>
         </FlexBetween>
       </Box>
-
-      <Divider />
 
       {/* FOURTH ROW */}
       <Box p="1rem 0">
@@ -128,7 +128,7 @@ const UserWidget = ({ userId, picturePath }) => {
               <Typography color={medium}>Social Network</Typography>
             </Box>
           </FlexBetween>
-          <EditOutlined sx={{ color: main }} />
+          {/* <EditOutlined sx={{ color: main }} /> */}
         </FlexBetween>
 
         <FlexBetween gap="1rem">
@@ -141,7 +141,7 @@ const UserWidget = ({ userId, picturePath }) => {
               <Typography color={medium}>Network Platform</Typography>
             </Box>
           </FlexBetween>
-          <EditOutlined sx={{ color: main }} />
+          {/* <EditOutlined sx={{ color: main }} /> */}
         </FlexBetween>
       </Box>
     </WidgetWrapper>
