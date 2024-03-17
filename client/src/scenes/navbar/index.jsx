@@ -11,7 +11,6 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import {
-  Search,
   Message,
   DarkMode,
   LightMode,
@@ -45,7 +44,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
-  const isNonMobileScreens = useMediaQuery("(min-width: 1345px)");
+  const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
   const { _id, picturePath } = useSelector((state) => state.user);
 
 
@@ -125,7 +124,7 @@ const Navbar = () => {
           </div>
           
           </Typography>
-          {isNonMobileScreens && (
+          {/* {isNonMobileScreens && (
           <FlexBetween
             backgroundColor={neutralLight}
             borderRadius="9px"
@@ -137,7 +136,7 @@ const Navbar = () => {
               <Search />
             </IconButton>
           </FlexBetween>
-        )}
+        )} */}
           
           
         </FlexBetween>
@@ -172,11 +171,19 @@ const Navbar = () => {
             )}
           </IconButton> */}
 
-          <IconButton onClick={() => navigate("")}>
+          <IconButton onClick={() => navigate("/checkin")}>
           {theme.palette.mode === "dark" ? (
               <><Typography sx={{ fontSize: "20px" }} > Check In </Typography></>
             ) : (
               <><Typography sx={{  fontSize: "20px" }} > Check In </Typography> </>
+            )}
+          </IconButton>
+
+          <IconButton onClick={() => navigate("/manage")}>
+          {theme.palette.mode === "dark" ? (
+              <><Typography sx={{ fontSize: "20px" }} > Manage </Typography></>
+            ) : (
+              <><Typography sx={{  fontSize: "20px" }} > Manage </Typography> </>
             )}
           </IconButton>
           
@@ -311,11 +318,19 @@ const Navbar = () => {
             )}
           </IconButton> */}
 
-          <IconButton onClick={() => navigate("")}>
+          <IconButton onClick={() => navigate("/checkin")}>
           {theme.palette.mode === "dark" ? (
               <><Typography sx={{ fontSize: "20px" }} > Check In </Typography></>
             ) : (
               <><Typography sx={{  color: dark, fontSize: "20px" }} > Check In </Typography> </>
+            )}
+          </IconButton>
+
+          <IconButton onClick={() => navigate("/checkin")}>
+          {theme.palette.mode === "dark" ? (
+              <><Typography sx={{ fontSize: "20px" }} > Manage </Typography></>
+            ) : (
+              <><Typography sx={{  color: dark, fontSize: "20px" }} > Manage </Typography> </>
             )}
           </IconButton>
           

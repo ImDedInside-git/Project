@@ -2,6 +2,10 @@ import mongoose from "mongoose";
 
 const BookingsSchema = new mongoose.Schema(
     {
+        bookingID: {
+            type: String,
+            required: true,
+        },
         userID: {
             type: String,
             ref: 'User',

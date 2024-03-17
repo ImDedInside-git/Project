@@ -6,14 +6,24 @@ import UserWidget from "scenes/widgets/UserWidget";
 import MyPostWidget from "scenes/widgets/MyPostWidget";
 import PostsWidget from "scenes/widgets/PostsWidget";
 import BookingWidget from "scenes/widgets/BookingWidget";
-import FriendListWidget from "scenes/widgets/ContactWidget";
+import ContactWidget from "scenes/widgets/ContactWidget";
 import HomeWidget from "scenes/widgets/HomeWidget";
-import Book from "components/book.jsx";
+import Book from "components/Book.jsx";
 import Slideshow from "scenes/widgets/Slideshows/Slideshow1";
+import AdvertWidget1 from "scenes/widgets/Ads/AdvertWidget1.jsx";
+import AdvertWidget2 from "scenes/widgets/Ads/AdvertWidget2.jsx";
+import FlexBetween from "components/FlexBetween";
 
 const HomePage = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
   const { _id, picturePath } = useSelector((state) => state.user);
+
+  // Generate a random number between 0 and 1
+  const randomIndex = Math.floor(Math.random() * 2); // 0 or 1
+
+  // Determine which AdvertWidget to render based on the randomIndex
+  const AdvertComponent =
+    randomIndex === 0 ? AdvertWidget1 : AdvertWidget2;
 
   return (
     <Box>
@@ -27,43 +37,31 @@ const HomePage = () => {
         gap="0.5rem"
         justifyContent="space-between"
       >
-        {/* <Slideshow /> */}
-
         <Box flexBasis={isNonMobileScreens ? "62%" : undefined}>
           {!isNonMobileScreens && (
             <>
-
-            
               <BookingWidget />
-
+              <Box m="2rem 0" />
             </>
           )}
 
           <Box
-              flexBasis={isNonMobileScreens ? "42%" : undefined}
-              mt={isNonMobileScreens ? undefined : "2rem"}
+            flexBasis={isNonMobileScreens ? "42%" : undefined}
+            mt={isNonMobileScreens ? undefined : "2rem"}
           >
-            {/* <UserWidget userId={_id} picturePath={picturePath} /> */}
-            {/* <Book /> */}
+            <UserWidget userId={_id} picturePath={picturePath} />
+            <Box m="2rem 0" />
             <HomeWidget userId={_id} picturePath={picturePath} />
-          
           </Box>
-          
         </Box>
-        {/* <Box
-          flexBasis={isNonMobileScreens ? "42%" : undefined}
-          mt={isNonMobileScreens ? undefined : "2rem"}
-        >
-          <MyPostWidget picturePath={picturePath} />
-          <PostsWidget userId={_id} />
-        </Box> */}
+        
         {isNonMobileScreens && (
           <Box 
             flexBasis={isNonMobileScreens ? "35%" : undefined}
             mt={isNonMobileScreens ? undefined : "2rem"}>
             <BookingWidget />
             <Box m="2rem 0" />
-            <FriendListWidget userId={_id} />
+            <AdvertComponent />
           </Box>
         )}
       </Box>

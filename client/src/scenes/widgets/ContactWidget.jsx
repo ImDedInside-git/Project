@@ -51,6 +51,9 @@ const ContactWidget = ({ userId }) => {
         <Typography color={dark}>
         <span style={{ fontWeight: 500 }}>Address:</span>&nbsp; 855 Falcon Way, Al-Hidd, Bahrain
         </Typography>
+        <Typography color={dark}>
+        <span style={{ fontWeight: 500 }}>&nbsp; </span>
+        </Typography>
       </Box>
     </WidgetWrapper>
   );

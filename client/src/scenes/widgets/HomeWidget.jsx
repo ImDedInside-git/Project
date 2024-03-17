@@ -12,7 +12,6 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import FlexBetween from "components/FlexBetween";
 import WidgetWrapper from "components/WidgetWrapper";
-import Slideshow from "./Slideshows/Slideshow1"; // Import CSS for slideshow styling
 
 const HomeWidget = ({ userId }) => {
   const [user, setUser] = useState(null);
@@ -62,7 +61,6 @@ const HomeWidget = ({ userId }) => {
         gap="0.5rem"
         pb="1.1rem"
       >
-        {/* SECOND ROW - Image Slideshow */}
         <Box
           width="100%"
           padding={isNonMobileScreens ? "0rem 3%" : "1.3rem 3%"}
