@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import FlexBetween from "components/FlexBetween";
 import WidgetWrapper from "components/WidgetWrapper";
-import Slideshow from "./Slideshow"; // Import CSS for slideshow styling
+import Slideshow from "./Slideshows/Slideshow1"; // Import CSS for slideshow styling
 
 const HomeWidget = ({ userId }) => {
   const [user, setUser] = useState(null);
