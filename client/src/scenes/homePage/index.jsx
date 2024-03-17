@@ -9,7 +9,7 @@ import BookingWidget from "scenes/widgets/BookingWidget";
 import FriendListWidget from "scenes/widgets/ContactWidget";
 import HomeWidget from "scenes/widgets/HomeWidget";
 import Book from "components/book.jsx";
-import Slideshow from "scenes/widgets/Slideshow";
+import Slideshow from "scenes/widgets/Slideshows/Slideshow1";
 
 const HomePage = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
