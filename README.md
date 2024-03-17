@@ -73,7 +73,7 @@ Special thanks to [Ed Roh](https://github.com/ed-roh/) for providing inspiration
 This project is licensed under the [MIT License](LICENSE).
 
 Feel free to contribute, provide feedback, or use Falcon Airlines as a reference for your projects!
-
+<!-- 
 ## Current Status
 
 ### Desktop
@@ -94,4 +94,4 @@ Feel free to contribute, provide feedback, or use Falcon Airlines as a reference
 ![image](https://github.com/ImDedInside-git/Project/assets/67794677/6481dee4-ce68-421c-a974-2ffb11a075ee)
 ![image](https://github.com/ImDedInside-git/Project/assets/67794677/23d7ca4a-8966-4c50-9920-dbd000b07652)
 ![image](https://github.com/ImDedInside-git/Project/assets/67794677/c8073a19-9cbf-4edb-9528-db329d0bfb60)
-![image](https://github.com/ImDedInside-git/Project/assets/67794677/d0b9fd27-069b-473c-84df-e432a52be41d)
+![image](https://github.com/ImDedInside-git/Project/assets/67794677/d0b9fd27-069b-473c-84df-e432a52be41d) -->
