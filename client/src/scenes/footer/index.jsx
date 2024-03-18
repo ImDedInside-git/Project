@@ -72,7 +72,7 @@ const Footer = () => {
         {/* Quick Links */}
         <Grid item xs={12} sm={6} md={1.5}>
           <Box textAlign="center" padding="1rem" backgroundColor={neutralDark}>
-            <Typography color={medium} fontSize="20px">
+            <Typography color={medium} fontSize="20px" fontWeight="500">
               Quick Links
             </Typography>
             <Typography color={medium} fontSize="15px"> &nbsp;</Typography>
@@ -94,7 +94,7 @@ const Footer = () => {
         {/* Follow Us */}
         <Grid item xs={12} sm={6} md={1}>
           <Box textAlign="center" padding="1rem" backgroundColor={neutralDark}>
-            <Typography color={medium} fontSize="20px">
+            <Typography color={medium} fontSize="20px" fontWeight="500">
               Follow Us
             </Typography>
             <Typography color={medium} fontSize="15px"> &nbsp;</Typography>
@@ -114,7 +114,7 @@ const Footer = () => {
         {/* Customer Support */}
         <Grid item xs={12} sm={6} md={2}>
           <Box textAlign="center" padding="1rem" backgroundColor={neutralDark}>
-            <Typography color={medium} fontSize="20px">
+            <Typography color={medium} fontSize="20px" fontWeight="500">
               Customer Support
             </Typography>
             <Typography color={medium} fontSize="15px"> &nbsp;</Typography>
@@ -130,19 +130,19 @@ const Footer = () => {
         {/* Address */}
         <Grid item xs={12} sm={6} md={3}>
           <Box textAlign="center" padding="1rem" backgroundColor={neutralDark}>
-            <Typography color={medium} fontSize="20px">
+            <Typography color={medium} fontSize="20px" fontWeight="500">
               Address
             </Typography>
             <Typography color={medium} fontSize="15px"> &nbsp;</Typography>
 
             <Typography color={medium} fontSize="14px">
-              Bahrain: 855 Falcon Way, Al-Hidd, Kingdom of Bahrain
+              Bahrain: Gulf Air Corporate, Road 855, Al-Hidd, Kingdom of Bahrain
             </Typography>
             <Typography color={medium} fontSize="14px">
-              Bengaluru (India):  789 Falcon Road, Koramangala,Bengaluru, India
+              Bengaluru (India):  Ground Floor, Kempegowda International Airport, Bengaluru, India
             </Typography>
             <Typography color={medium} fontSize="14px">
-              Dubai (UAE): 456 Falcon Street, Dubai Marina, Dubai, United Arab Emirates
+              Dubai (UAE): Sheikh Isa Al Khalifa Building, Salahuddin Road, Dubai Marina, Dubai, United Arab Emirates
             </Typography>
           </Box>
         </Grid>

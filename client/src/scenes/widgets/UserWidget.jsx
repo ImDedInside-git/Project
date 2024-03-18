@@ -1,6 +1,5 @@
 import {
   ManageAccountsOutlined,
-  // EditOutlined,
   LocationOnOutlined,
   WorkOutlineOutlined,
   Email,
@@ -21,6 +20,8 @@ const UserWidget = ({ userId, picturePath }) => {
   const dark = palette.neutral.dark;
   const medium = palette.neutral.medium;
   const main = palette.neutral.main;
+  const isAdmin = user?.isAdmin === true; 
+
 
   const getUser = async () => {
     const response = await fetch(`http://localhost:3001/users/${userId}`, {
@@ -40,12 +41,15 @@ const UserWidget = ({ userId, picturePath }) => {
   }
 
   const {
+    _id,
     firstName,
     lastName,
     email,
     location,
     occupation,
-    impressions
+    impressions,
+    viewedProfile,
+    password
   } = user;
 
   return (
@@ -60,7 +64,7 @@ const UserWidget = ({ userId, picturePath }) => {
           <UserImage image={picturePath} />
           <Box>
             <Typography
-              variant="h4"
+              variant="h3"
               color={dark}
               fontWeight="500"
               sx={{
@@ -72,6 +76,11 @@ const UserWidget = ({ userId, picturePath }) => {
             >
               {firstName} {lastName}
             </Typography>
+            {isAdmin ? 
+              <><Typography color={main} fontWeight="500"> {_id} </Typography>
+            </> :
+              <><Typography color={main} fontWeight="500"> Guest </Typography></>
+            }
           </Box>
         </FlexBetween>
         <ManageAccountsOutlined />
@@ -80,6 +89,32 @@ const UserWidget = ({ userId, picturePath }) => {
       <Divider />
 
       {/* SECOND ROW */}
+      <Box p="1rem 0">
+        <FlexBetween>
+        <Typography
+              variant="h4"
+              color={dark}
+              fontWeight="500"
+              sx={{
+                "&:hover": {
+                  color: palette.primary.light,
+                  cursor: "pointer",
+                },
+              }}
+            > 
+              FalconFlyer Points <Typography color={main} fontWeight="500"> Frequent Flyer Program </Typography>
+            </Typography>
+          <Typography color={main} fontWeight="500" fontSize="1.15rem">
+          {isAdmin ? <>{4206969} </> : <>{impressions*200}</>} <Typography color={main} fontWeight="500"> Star Alliance </Typography>
+          </Typography>
+        </FlexBetween>
+      </Box>
+
+      
+
+      <Divider />
+
+      {/* THIRD ROW */}
       <Box p="1rem 0">
         <Box display="flex" alignItems="center" gap="1rem" mb="0.5rem">
           <LocationOnOutlined fontSize="large" sx={{ color: main }} />
@@ -100,20 +135,11 @@ const UserWidget = ({ userId, picturePath }) => {
         </Box>
       </Box>
 
-      <Divider />
-
-      {/* THIRD ROW */}
-      <Box p="1rem 0">
-        <FlexBetween>
-          <Typography color={medium}>Your Falcon travel points</Typography>
-          <Typography color={main} fontWeight="500">
-            {impressions}
-          </Typography>
-        </FlexBetween>
-      </Box>
+      {/* <Divider /> */}
+      
 
       {/* FOURTH ROW */}
-      <Box p="1rem 0">
+      {/* <Box p="1rem 0">
         <Typography fontSize="1rem" color={main} fontWeight="500" mb="1rem">
           Social Profiles
         </Typography>
@@ -128,7 +154,7 @@ const UserWidget = ({ userId, picturePath }) => {
               <Typography color={medium}>Social Network</Typography>
             </Box>
           </FlexBetween>
-          {/* <EditOutlined sx={{ color: main }} /> */}
+          <EditOutlined sx={{ color: main }} />
         </FlexBetween>
 
         <FlexBetween gap="1rem">
@@ -141,9 +167,9 @@ const UserWidget = ({ userId, picturePath }) => {
               <Typography color={medium}>Network Platform</Typography>
             </Box>
           </FlexBetween>
-          {/* <EditOutlined sx={{ color: main }} /> */}
+          <EditOutlined sx={{ color: main }} />
         </FlexBetween>
-      </Box>
+      </Box> */}
     </WidgetWrapper>
   );
 };

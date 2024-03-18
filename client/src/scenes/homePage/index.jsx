@@ -49,9 +49,9 @@ const HomePage = () => {
             flexBasis={isNonMobileScreens ? "42%" : undefined}
             mt={isNonMobileScreens ? undefined : "2rem"}
           >
-            <UserWidget userId={_id} picturePath={picturePath} />
-            <Box m="2rem 0" />
             <HomeWidget userId={_id} picturePath={picturePath} />
+            <Box m="2rem 0" />
+            <UserWidget userId={_id} picturePath={picturePath} />
           </Box>
         </Box>
         

@@ -58,6 +58,8 @@ const Navbar = () => {
 
   const { palette } = useTheme();
   const medium = palette.neutral.medium;
+  const isAdmin = user?.isAdmin === true; 
+
 
   
 
@@ -85,6 +87,7 @@ const Navbar = () => {
           Falcon Airlines
           <Typography color={medium} mt="-0.5rem">&nbsp;&nbsp;&nbsp;Soar to new heights.&#8482;</Typography>
         </Typography>
+        
         </>
       )}
       
@@ -94,7 +97,7 @@ const Navbar = () => {
             fontWeight="bold"
             fontSize="clamp(1rem, 2rem, 2.25rem)"
             color="primary"
-            onClick={() => navigate("/home")}
+            onClick={() => {isAdmin ? navigate("/admin") : navigate("/home")}}
             sx={{
               "&:hover": {
                 color: primaryLight,
@@ -108,7 +111,6 @@ const Navbar = () => {
               fontWeight="bold"
               fontSize="clamp(1rem, 1.6rem, 2.25rem)"
               color="primary"
-              onClick={() => navigate("/home")}
               sx={{
                 "&:hover": {
                   color: primaryLight,
@@ -117,9 +119,18 @@ const Navbar = () => {
                   cursor: "pointer",
                 },
               }}
-            >
-              &nbsp;&nbsp;&nbsp;Falcon Airlines
-              <Typography color={medium} mt="-0.5rem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Soar to new heights.&#8482;</Typography>
+            > 
+              {isAdmin ? 
+                <> &nbsp;&nbsp;&nbsp; Administrator</> 
+                : <>&nbsp;&nbsp;&nbsp;Falcon Airlines</>
+              }
+              <Typography color={medium} mt="-0.5rem">
+                {isAdmin ? 
+                  <> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Handle with care and caution.</> 
+                  : <>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Soar to new heights.</>
+                }
+              &#8482;
+              </Typography>
             </Typography>
           </div>
           
@@ -163,14 +174,6 @@ const Navbar = () => {
             )}
           </IconButton>
 
-          {/* <IconButton onClick={() => navigate("")}>
-          {theme.palette.mode === "dark" ? (
-              <><Typography sx={{ fontSize: "20px" }} > Manage </Typography></>
-            ) : (
-              <><Typography sx={{  fontSize: "20px" }} > Manage </Typography> </>
-            )}
-          </IconButton> */}
-
           <IconButton onClick={() => navigate("/checkin")}>
           {theme.palette.mode === "dark" ? (
               <><Typography sx={{ fontSize: "20px" }} > Check In </Typography></>
@@ -194,13 +197,7 @@ const Navbar = () => {
               <LightMode sx={{ color: dark, fontSize: "25px" }} />
             )}
           </IconButton>
-          {/* <IconButton onClick={() => window.location.reload()}>
-            {theme.palette.mode === "dark" ? (
-              <Refresh sx={{ fontSize: "25px" }} />
-            ) : (
-              <Refresh sx={{ color: dark, fontSize: "25px" }} />
-            )}
-          </IconButton> */}
+          
           <IconButton>
             {theme.palette.mode === "dark" ? (
               <Notifications sx={{ fontSize: "25px" }} />
@@ -208,13 +205,7 @@ const Navbar = () => {
               <Notifications sx={{ color: dark, fontSize: "25px" }} />
             )}
           </IconButton>
-          {/* <IconButton>
-            {theme.palette.mode === "dark" ? (
-              <Help  sx={{ fontSize: "25px" }} />
-            ) : (
-              <Help  sx={{ color: dark, fontSize: "25px" }} />
-            )}
-          </IconButton> */}
+         
           <FormControl variant="standard" value={fullName}>
             <Select
               value={fullName}
@@ -234,7 +225,7 @@ const Navbar = () => {
               input={<InputBase />}
             >
               <MenuItem value={fullName} >
-                <NavUserImage image={picturePath} />
+                <NavUserImage image={picturePath} /> 
               </MenuItem>
               <MenuItem onClick={() => dispatch(setLogout())}>
               &nbsp;&nbsp;<ExitToApp />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Log Out
