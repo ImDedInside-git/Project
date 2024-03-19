@@ -2,10 +2,6 @@ import mongoose from "mongoose";
 
 const FlightsSchema = new mongoose.Schema(
     {
-        airlineID: {
-            type: String,
-            required: true,
-        },
         flightID: {
             type: String,
             required: true,

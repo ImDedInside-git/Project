@@ -8,6 +8,9 @@ function Slideshow() {
       url: 'https://wallpaperaccess.com/full/1884689.jpg',
     },
     {
+      url: 'https://wallpaperaccess.com/full/1884689.jpg',
+    },    
+    {
         url: 'https://preview.redd.it/iyhygkj6h8931.jpg?width=1080&crop=smart&auto=webp&s=90084e1aba0ff825d923960e16595cdc0b744b76',
     },
     {

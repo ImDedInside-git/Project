@@ -23,7 +23,7 @@ const bookSchema = yup.object().shape({
   To: yup.string().required("Required"),
   Class: yup.string().required("Required"),
   departureDate: yup.string().required("Required"),
-  returnDate: yup.string().required("Required"),
+  returnDate: yup.string(),
 });
 
 
@@ -46,7 +46,7 @@ const Book = () => {
   const isLogin = pageType === "login";
   const isRegister = pageType === "register";
 
-  const register = async (values, onSubmitProps) => {
+  const checkavail = async (values, onSubmitProps) => {
     // this allows us to send form info with image
     const formData = new FormData();
     for (let value in values) {

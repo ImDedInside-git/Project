@@ -8,12 +8,11 @@ import morgan from "morgan";
 import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
-import { error } from "console";
 import { register } from "./controllers/auth.js";
-import authRoutes from "./routes/auth.js"
-import forbiddenRoutes from "./routes/forbidden.js"
-import userRoutes from "./routes/users.js"
-import flightsRoutes from "./routes/flights.js"
+import authRoutes from "./routes/auth.js";
+import forbiddenRoutes from "./routes/forbidden.js";
+import userRoutes from "./routes/users.js";
+import flightsRoutes from "./routes/flights.js";
 import { verifyToken } from "./middleware/auth.js";
 import { createFlight } from "./controllers/flights.js";
 import User from "./models/User.js";
@@ -50,7 +49,22 @@ const upload = multer({ storage });
 app.post("/auth/register", upload.single("picture"), register);
 app.post("/flights", verifyToken, upload.single("picture"), createFlight);
 
+// Define a route to fetch flights
+app.get("/flights", async (req, res) => {
+  const { from, to, arrivalDate } = req.query;
 
+  try {
+    const flights = await Flights.find({
+      departureAirport: from,
+      arrivalAirport: to,
+      arrivalDateTime: { $lte: new Date(arrivalDate) },
+    });
+    res.json(flights);
+  } catch (error) {
+    console.error("Error fetching flights:", error);
+    res.status(500).json({ error: "An error occurred" });
+  }
+});
 
 // * ROUTES */
 app.use("/auth", authRoutes);
@@ -58,20 +72,20 @@ app.use("/", forbiddenRoutes);
 app.use("/users", userRoutes);
 app.use("/flights", flightsRoutes);
 
-// * ROUTES WITH FILES */
-// app.post("auth/register", upload.single("picture"), register);
-
-
 // * MONGOOSE SETUP */
 const PORT = process.env.PORT || 6001;
-mongoose.connect(process.env.MONGO_URL, {
+mongoose
+  .connect(process.env.MONGO_URL, {
     // useNewUrlParser: true,
     // useUnifiedTopology: true,
-  }).then(() => {
-    app.listen(PORT, () => console.log(`Server running on Port ${PORT}: http://localhost:${PORT}`));
-    
-    // ! ADD DATA **RUN ONCE ONLY**
-    // ? User.insertMany(users);
-    // ? Flights.insertMany(flights);
+  })
+  .then(() => {
+    app.listen(PORT, () =>
+      console.log(`Server running on Port ${PORT}: http://localhost:${PORT}`)
+    );
 
-  }).catch(err => console.log(`${err} did not connect`));
+    // ! ADD DATA **RUN ONCE ONLY**
+    // User.insertMany(users);
+    // Flights.insertMany(flights);
+  })
+  .catch((err) => console.log(`${err} did not connect`));
