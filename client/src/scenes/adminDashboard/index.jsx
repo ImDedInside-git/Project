@@ -6,15 +6,31 @@ import Footer from 'scenes/footer';
 import BookingWidget from 'scenes/widgets/BookingWidget';
 import ManageWidget from 'scenes/widgets/ManageWidget';
 import CheckInWidget from 'scenes/widgets/CheckInWidget';
+import AddFlights from 'components/Admin/AddFlights';
+import WidgetWrapper from 'components/WidgetWrapper';
 
 
 
 const AdminDashboard = () => {
   return (
     <Box>
-      <Loginbar />
-      <Box m="1rem" />
+      {/* <Loginbar /> */}
+      {/* <Box m="1rem" /> */}
       <Navbar />
+      
+      <Box m="5rem">
+      <Box width="50%" justifyContent="center" alignItems="center" marginTop="2rem">
+        <WidgetWrapper>
+          <b>
+          Create Flight (ADMIN)
+          </b>
+          <br /><br />
+          <AddFlights />
+        </WidgetWrapper>
+      </Box>
+
+
+      </Box>
       <Box m="5rem">
         <Typography variant="h1" align="center" gutterBottom>Welcome to Admin Dashboard</Typography>
         <Box display="flex" justifyContent="center" alignItems="center" marginTop="2rem">
