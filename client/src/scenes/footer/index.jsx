@@ -100,13 +100,13 @@ const Footer = () => {
             <Typography color={medium} fontSize="15px"> &nbsp;</Typography>
             <Typography color={medium} fontSize="10px"> </Typography>
             <Typography color={medium} fontSize="20px">
-              <a href="https://www.facebook.com/falconairlines" style={{ color: medium }}><Facebook sx={{ fontSize: "35px" }}/></a>
+              <a rel="noreferrer" target="_blank" href="https://www.facebook.com/falconairlines" style={{ color: medium }}><Facebook sx={{ fontSize: "35px" }}/></a>
             </Typography>
             <Typography color={medium} fontSize="30px">
-              <a href="https://twitter.com/falconairlines" style={{ color: medium }}><Twitter sx={{ fontSize: "35px" }}/></a>
+              <a rel="noreferrer" target="_blank" href="https://twitter.com/falconairlines" style={{ color: medium }}><Twitter sx={{ fontSize: "35px" }}/></a>
             </Typography>
             <Typography color={medium} fontSize="30px">
-              <a href="https://instagram.com/falconairlines" style={{ color: medium }}><Instagram sx={{ fontSize: "35px" }}/></a>
+              <a rel="noreferrer" target="_blank" href="https://instagram.com/falconairlines" style={{ color: medium }}><Instagram sx={{ fontSize: "35px" }}/></a>
             </Typography>
           </Box>
         </Grid>
@@ -122,7 +122,7 @@ const Footer = () => {
               Phone: +973 1757 7700 (Toll Free)
             </Typography>
             <Typography color={medium} fontSize="14px">
-              Email: <a href="mailto:support@falconairlines.bh" style={{ color: medium }}>support@falconairlines.bh</a>
+              Email: <a rel="noreferrer" target="_blank" href="mailto:support@falconairlines.bh" style={{ color: medium }}>support@falconairlines.bh</a>
             </Typography>
           </Box>
         </Grid>
@@ -133,6 +133,7 @@ const Footer = () => {
             <Typography color={medium} fontSize="20px" fontWeight="500">
               Address
             </Typography>
+            <address>
             <Typography color={medium} fontSize="15px"> &nbsp;</Typography>
 
             <Typography color={medium} fontSize="14px">
@@ -144,6 +145,7 @@ const Footer = () => {
             <Typography color={medium} fontSize="14px">
               Dubai (UAE): Sheikh Isa Al Khalifa Building, Salahuddin Road, Dubai Marina, Dubai, United Arab Emirates
             </Typography>
+            </address>
           </Box>
         </Grid>
       </Grid>
@@ -163,7 +165,7 @@ const Footer = () => {
               <strong>&copy; {currentYear} Falcon Airlines. All rights reserved.</strong>
             </Typography>
             <Typography color={medium} fontSize="14px" mt="0.5rem">
-              <a href="https://github.com/ImDedInside-git" style={{ color: medium }}>Designed by ImDedInside</a>
+              <a rel="noreferrer" target="_blank" href="https://github.com/ImDedInside-git" style={{ color: medium }}>Designed by ImDedInside</a>
             </Typography>
             <Typography color={medium} fontSize="14px" mt="0.5rem">&nbsp;</Typography>
 

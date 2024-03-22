@@ -1,7 +1,8 @@
 import express from "express";
 import {
     getUser,
-    getUserBookings
+    getUserBookings,
+    addRemoveBooking
 } from "../controllers/users.js";
 import { verifyToken } from "../middleware/auth.js"
 
@@ -12,6 +13,6 @@ router.get("/:id", verifyToken, getUser);
 router.get(":/id/bookings", verifyToken, getUserBookings);
 
 /* UPDATE */
-// router.patch("/:id/:bookingId", verifyToken, addRemoveBooking);
+router.patch("/:id/:bookingId", verifyToken, addRemoveBooking);
 
 export default router;
