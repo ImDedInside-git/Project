@@ -1,57 +1,53 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
-import Loginbar from '../navbar/loginbar';
+import { Box, Typography, useMediaQuery } from '@mui/material';
 import Navbar from '../navbar';
 import Footer from 'scenes/footer';
-import BookingWidget from 'scenes/widgets/BookingWidget';
-import ManageWidget from 'scenes/widgets/ManageWidget';
-import CheckInWidget from 'scenes/widgets/CheckInWidget';
-import AddFlights from 'components/Admin/AddFlights';
-import WidgetWrapper from 'components/WidgetWrapper';
-import PostsWidget from 'scenes/widgets/PostsWidget';
+import UserWidget from 'scenes/widgets/UserWidget';
+import { useSelector } from "react-redux";
+import CreateFlight from 'scenes/widgets/Admin/CreateFlightWidget';
+import AdminHome from 'scenes/widgets/Admin/AdminHome';
+
 
 
 
 const AdminDashboard = () => {
+  const { _id, picturePath } = useSelector((state) => state.user);
+  const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
+
+
   return (
     <Box>
-      {/* <Loginbar /> */}
-      {/* <Box m="1rem" /> */}
       <Navbar />
       
-      <Box m="5rem">
-      <Box width="50%" justifyContent="center" alignItems="center" marginTop="2rem">
-        <PostsWidget />
-        <WidgetWrapper>
-          <b>
-          Create Flight (ADMIN)
-          </b>
-          <br /><br />
-          <AddFlights />
-        </WidgetWrapper>
-      </Box>
+      <Box
+        width="100%"
+        padding={isNonMobileScreens ? "4rem 3%" : "1.3rem 3%"}
+        display={isNonMobileScreens ? "flex" : "block"}
+        gap="0.5rem"
+        justifyContent="space-between"
+      >
+        <Box flexBasis={isNonMobileScreens ? "50%" : undefined}>
 
+          <Box
+            mt={isNonMobileScreens ? undefined : "2rem"}
+          >
+            <CreateFlight />
+            {/* <AdminHome /> */}
 
-      </Box>
-      <Box m="5rem">
-        <Typography variant="h1" align="center" gutterBottom>Welcome to Admin Dashboard</Typography>
-        <Box display="flex" justifyContent="center" alignItems="center" marginTop="2rem">
-          {/* Add your admin dashboard content here */}
-          <Box width="40%" padding="1rem" border="1px solid #ccc" borderRadius="5px" boxShadow="0px 0px 10px 0px rgba(0,0,0,0.1)">
-            <Typography variant="h2" gutterBottom>Admin Overview</Typography>
-            <Box m="1rem" />
-            <BookingWidget />
-            <Box m="1rem" />
-            <ManageWidget />
-            <Box m="1rem" />
-            <CheckInWidget />
-            <Box m="1rem" />
-
-            {/* Add widgets or components for admin overview */}
-            {/* Example: */}
-            {/* <Typography variant="body1">You can display various statistics, graphs, or summaries here.</Typography> */}
           </Box>
         </Box>
+        
+        {isNonMobileScreens && (
+          <Box 
+            flexBasis={isNonMobileScreens ? "40%" : undefined}
+            mt={isNonMobileScreens ? undefined : "2rem"}
+          >
+            {/* <CreateFlight />
+            <Box m="2rem 0" /> */}
+            <UserWidget userId={_id} picturePath={picturePath} />
+            <Box m="2rem 0" />
+          </Box>
+        )}
       </Box>
       <Footer />
     </Box>

@@ -11,6 +11,7 @@ import ProfilePage from "scenes/profilePage";
 import CheckInPage from "scenes/checkInPage";
 import ManagePage from "scenes/managePage";
 import AdminDashboard from "scenes/adminDashboard"; // Import the AdminDashboard component
+import Test from "scenes/adminDashboard/testing"; // Import the Testing component
 
 function App() {
   const mode = useSelector((state) => state.mode);
@@ -31,10 +32,15 @@ function App() {
 
             
 
-            <Route
+            {/* <Route
               path="/"
               element={isAuth ? <HomePage /> : <Navigate to="/login" />}
+            /> */}
+            <Route
+              path="/"
+              element={isAuth ? <> {isAdmin ? <AdminDashboard /> : <HomePage />} </> : <Navigate to="/login" />}
             />
+            
             
             <Route
               path="/home"
@@ -56,6 +62,13 @@ function App() {
               path="/admin"
               element={isAuth && isAdmin ? <AdminDashboard /> : <Navigate to="/" />}
             />
+            <Route
+              path="/test"
+              element={isAuth && isAdmin ? <Test /> : <Navigate to="/" />}
+            />
+
+
+
             {/* <Route
               path="/profile/:userId"
               element={isAuth ? <ProfilePage /> : <Navigate to="/" />}

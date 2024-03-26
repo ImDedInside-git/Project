@@ -11,7 +11,7 @@ export const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    setMode: (state) => {
+      setMode: (state) => {
           state.mode = state.mode === "light" ? "dark" : "light";
       },
       setLogin: (state, action) => {
@@ -28,7 +28,12 @@ export const authSlice = createSlice({
           } else {
               console.error("User bookings non existant");
           }
-      }
+      },
+      // setCurrency: (state, action) => {
+      //     state.mode = state.mode === "inr" ? "usd" : "usd";
+      // }
+
+          
       // ! INCOMPLETE
   },
 });

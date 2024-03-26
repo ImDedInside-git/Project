@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import {
   Message,
+  AdminPanelSettings,
   DarkMode,
   LightMode,
   Notifications,
@@ -29,7 +30,7 @@ import {
   ManageHistory
 } from "@mui/icons-material";
 import { useDispatch, useSelector } from "react-redux";
-import { setMode, setLogout } from "state";
+import { setMode, setCurrency,  setLogout } from "state";
 import { useNavigate } from "react-router-dom";
 import FlexBetween from "components/FlexBetween";
 import logo from "../assets/logo2.png"
@@ -197,14 +198,34 @@ const Navbar = () => {
               <LightMode sx={{ color: dark, fontSize: "25px" }} />
             )}
           </IconButton>
+
+          {/* <IconButton onClick={() => dispatch(setCurrency())}>
+            {theme.palette.mode === "dark" ? (
+              <CurrencyRupee sx={{ fontSize: "25px" }} />
+            ) : (
+              <CurrencyRupee sx={{ color: dark, fontSize: "25px" }} />
+            )}
+          </IconButton> */}
           
-          <IconButton>
+          { isAdmin && (
+            <IconButton onClick={() => navigate("/test")}>
+            {theme.palette.mode === "dark" ? (
+              <AdminPanelSettings sx={{ fontSize: "25px" }} />
+            ) : (
+              <AdminPanelSettings sx={{ color: dark, fontSize: "25px" }} />
+            )}
+            </IconButton>
+          )}
+
+          { !isAdmin && (
+          <IconButton onClick={() => navigate("/")}>
             {theme.palette.mode === "dark" ? (
               <Notifications sx={{ fontSize: "25px" }} />
             ) : (
               <Notifications sx={{ color: dark, fontSize: "25px" }} />
             )}
           </IconButton>
+          )}
          
           <FormControl variant="standard" value={fullName}>
             <Select

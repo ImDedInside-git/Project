@@ -3,16 +3,11 @@ import { useSelector } from "react-redux";
 import Navbar from "scenes/navbar";
 import Footer from "scenes/footer";
 import UserWidget from "scenes/widgets/UserWidget";
-import MyPostWidget from "scenes/widgets/MyPostWidget";
-import PostsWidget from "scenes/widgets/PostsWidget";
 import BookingWidget from "scenes/widgets/BookingWidget";
-import ContactWidget from "scenes/widgets/ContactWidget";
 import HomeWidget from "scenes/widgets/HomeWidget";
-import Book from "components/Book.jsx";
 import Slideshow from "scenes/widgets/Slideshows/Slideshow1";
 import AdvertWidget1 from "scenes/widgets/Ads/AdvertWidget1.jsx";
 import AdvertWidget2 from "scenes/widgets/Ads/AdvertWidget2.jsx";
-import FlexBetween from "components/FlexBetween";
 
 const HomePage = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
