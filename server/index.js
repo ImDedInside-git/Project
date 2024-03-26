@@ -18,6 +18,8 @@ import { createFlight } from "./controllers/flights.js";
 import User from "./models/User.js";
 import Flights from "./models/flights.js";
 import { users, flights } from "./data/index.js";
+import postRoutes from "./routes/posts.js";
+import { createPost } from "./controllers/posts.js";
 
 // * CONFIGURATIONS */
 const __filename = fileURLToPath(import.meta.url);
@@ -48,6 +50,8 @@ const upload = multer({ storage });
 /* ROUTES WITH FILES */
 app.post("/auth/register", upload.single("picture"), register);
 app.post("/flights", verifyToken, upload.single("picture"), createFlight);
+app.post("/posts", verifyToken, upload.single("picture"), createPost);
+
 
 // Define a route to fetch flights
 app.get("/flights", async (req, res) => {
@@ -71,6 +75,8 @@ app.use("/auth", authRoutes);
 app.use("/", forbiddenRoutes);
 app.use("/users", userRoutes);
 app.use("/flights", flightsRoutes);
+app.use("/posts", postRoutes);
+
 
 // * MONGOOSE SETUP */
 const PORT = process.env.PORT || 6001;

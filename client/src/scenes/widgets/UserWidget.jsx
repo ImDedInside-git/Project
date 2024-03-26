@@ -105,7 +105,7 @@ const UserWidget = ({ userId, picturePath }) => {
               FalconFlyer Points <Typography color={main} fontWeight="500"> Frequent Flyer Program </Typography>
             </Typography>
           <Typography color={main} fontWeight="500" fontSize="1.15rem">
-          {isAdmin ? <>{4206969} </> : <>{impressions*200}</>} <Typography color={main} fontWeight="500"> Star Alliance </Typography>
+          {isAdmin ? <> {impressions} </> : <>{impressions*200}</>} <Typography color={main} fontWeight="500"> Star Alliance </Typography>
           </Typography>
         </FlexBetween>
       </Box>

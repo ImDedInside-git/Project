@@ -8,6 +8,7 @@ import ManageWidget from 'scenes/widgets/ManageWidget';
 import CheckInWidget from 'scenes/widgets/CheckInWidget';
 import AddFlights from 'components/Admin/AddFlights';
 import WidgetWrapper from 'components/WidgetWrapper';
+import PostsWidget from 'scenes/widgets/PostsWidget';
 
 
 
@@ -20,6 +21,7 @@ const AdminDashboard = () => {
       
       <Box m="5rem">
       <Box width="50%" justifyContent="center" alignItems="center" marginTop="2rem">
+        <PostsWidget />
         <WidgetWrapper>
           <b>
           Create Flight (ADMIN)
