@@ -137,7 +137,7 @@ const Footer = () => {
             <Typography color={medium} fontSize="15px"> &nbsp;</Typography>
 
             <Typography color={medium} fontSize="14px">
-              Bahrain: Gulf Air Corporate, Road 855, Al-Hidd, Kingdom of Bahrain
+              Bahrain: Falcon Airways Corporate, Road 855, Al-Hidd, Kingdom of Bahrain
             </Typography>
             <Typography color={medium} fontSize="14px">
               Bengaluru (India):  Ground Floor, Kempegowda International Airport, Bengaluru, India
