@@ -6,6 +6,7 @@ import UserWidget from 'scenes/widgets/UserWidget';
 import { useSelector } from "react-redux";
 import CreateFlight from 'scenes/widgets/Admin/CreateFlightWidget';
 import AdminHome from 'scenes/widgets/Admin/AdminHome';
+import FlightsWidget from 'scenes/widgets/Flights/FlightsWidget';
 
 
 
@@ -32,6 +33,7 @@ const AdminDashboard = () => {
             mt={isNonMobileScreens ? undefined : "2rem"}
           >
             <CreateFlight />
+            <FlightsWidget userId={_id} />
             {/* <AdminHome /> */}
 
           </Box>
@@ -45,6 +47,8 @@ const AdminDashboard = () => {
             {/* <CreateFlight />
             <Box m="2rem 0" /> */}
             <UserWidget userId={_id} picturePath={picturePath} />
+            {/* <FlightsWidget userId={_id} /> */}
+            {_id}
             <Box m="2rem 0" />
           </Box>
         )}

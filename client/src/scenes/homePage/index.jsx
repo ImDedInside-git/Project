@@ -8,6 +8,7 @@ import HomeWidget from "scenes/widgets/HomeWidget";
 import Slideshow from "scenes/widgets/Slideshows/Slideshow1";
 import AdvertWidget1 from "scenes/widgets/Ads/AdvertWidget1.jsx";
 import AdvertWidget2 from "scenes/widgets/Ads/AdvertWidget2.jsx";
+import PostsWidget from "scenes/widgets/PostsWidget";
 
 const HomePage = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
@@ -25,6 +26,8 @@ const HomePage = () => {
       <Navbar />
       <Slideshow />
       
+
+      
       <Box
         width="100%"
         padding={isNonMobileScreens ? "4rem 3%" : "1.3rem 3%"}
@@ -36,6 +39,7 @@ const HomePage = () => {
           {!isNonMobileScreens && (
             <>
               <BookingWidget />
+
               <Box m="2rem 0" />
             </>
           )}
