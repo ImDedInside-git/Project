@@ -12,7 +12,7 @@ import {
   import { useDispatch, useSelector } from "react-redux";
   import { setPost } from "state";
   
-  const PostWidget = ({
+  const FlightWidget = ({
     postId,
     postUserId,
     name,
@@ -109,5 +109,5 @@ import {
     );
   };
   
-  export default PostWidget;
+  export default FlightWidget;
   
