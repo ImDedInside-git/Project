@@ -5,15 +5,15 @@ import Footer from 'scenes/footer';
 import UserWidget from 'scenes/widgets/UserWidget';
 import { useSelector } from "react-redux";
 import CreateFlight from 'scenes/widgets/Admin/CreateFlightWidget';
-import AdminHome from 'scenes/widgets/Admin/AdminHome';
-import FlightsWidget from 'scenes/widgets/Flights/FlightsWidget';
+import WidgetWrapper from 'components/WidgetWrapper';
 
 
 
 
 const AdminDashboard = () => {
-  const { _id, picturePath } = useSelector((state) => state.user);
+  const { _id, picturePath, email, viewedProfile} = useSelector((state) => state.user);
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
+ 
 
 
   return (
@@ -27,28 +27,61 @@ const AdminDashboard = () => {
         gap="0.5rem"
         justifyContent="space-between"
       >
-        <Box flexBasis={isNonMobileScreens ? "50%" : undefined}>
+        <Box flexBasis={isNonMobileScreens ? "37%" : undefined}>
 
           <Box
             mt={isNonMobileScreens ? undefined : "2rem"}
           >
             <CreateFlight />
-            <FlightsWidget userId={_id} />
             {/* <AdminHome /> */}
 
           </Box>
         </Box>
-        
         {isNonMobileScreens && (
           <Box 
-            flexBasis={isNonMobileScreens ? "40%" : undefined}
+            flexBasis={isNonMobileScreens ? "30%" : undefined}
             mt={isNonMobileScreens ? undefined : "2rem"}
           >
             {/* <CreateFlight />
             <Box m="2rem 0" /> */}
             <UserWidget userId={_id} picturePath={picturePath} />
             {/* <FlightsWidget userId={_id} /> */}
-            {_id}
+            <Box m="2rem 0" />
+          </Box>
+        )}
+
+        {isNonMobileScreens && (
+          <Box 
+            flexBasis={isNonMobileScreens ? "15%" : undefined}
+            mt={isNonMobileScreens ? undefined : "2rem"}
+          >
+            {/* <CreateFlight />
+            <Box m="2rem 0" /> */}
+            {/* <FlightsWidget userId={_id} /> */}
+            <WidgetWrapper>
+              <Box> {_id} </Box>
+              <Box> {email} </Box>
+              <Box> {viewedProfile**2} </Box>
+
+            </WidgetWrapper>
+            <Box m="2rem 0" />
+          </Box>
+        )}
+        
+        {isNonMobileScreens && (
+          <Box 
+            flexBasis={isNonMobileScreens ? "15%" : undefined}
+            mt={isNonMobileScreens ? undefined : "2rem"}
+          >
+            {/* <CreateFlight />
+            <Box m="2rem 0" /> */}
+            {/* <FlightsWidget userId={_id} /> */}
+            <WidgetWrapper>
+              <Box> {_id} </Box>
+              <Box> {email} </Box>
+              <Box> {viewedProfile**2} </Box>
+
+            </WidgetWrapper>
             <Box m="2rem 0" />
           </Box>
         )}

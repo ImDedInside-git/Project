@@ -46,9 +46,6 @@ export const authSlice = createSlice({
         });
         state.posts = updatedPosts;
       },
-      // setCurrency: (state, action) => {
-      //     state.mode = state.mode === "inr" ? "usd" : "usd";
-      // }
 
           
       // ! INCOMPLETE

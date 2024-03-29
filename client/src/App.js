@@ -11,7 +11,8 @@ import ProfilePage from "scenes/profilePage";
 import CheckInPage from "scenes/checkInPage";
 import ManagePage from "scenes/managePage";
 import AdminDashboard from "scenes/adminDashboard"; // Import the AdminDashboard component
-import Test from "scenes/adminDashboard/testing.jsx"; // Import the Testing component
+// import Test from "scenes/adminDashboard/test.jsx"; // Import the Testing component
+import Test from "scenes/adminDashboard/blank.jsx"; 
 
 function App() {
   const mode = useSelector((state) => state.mode);
