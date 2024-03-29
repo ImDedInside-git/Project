@@ -40,7 +40,7 @@ const AdminDashboard = () => {
         
         {isNonMobileScreens && (
           <Box 
-            flexBasis={isNonMobileScreens ? "30%" : undefined}
+            flexBasis={isNonMobileScreens ? "35%" : undefined}
             mt={isNonMobileScreens ? undefined : "2rem"}
           >
             {/* <CreateFlight />

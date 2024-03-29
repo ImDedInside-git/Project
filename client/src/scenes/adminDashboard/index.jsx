@@ -27,7 +27,7 @@ const AdminDashboard = () => {
         gap="0.5rem"
         justifyContent="space-between"
       >
-        <Box flexBasis={isNonMobileScreens ? "37%" : undefined}>
+        <Box flexBasis={isNonMobileScreens ? "35%" : undefined}>
 
           <Box
             mt={isNonMobileScreens ? undefined : "2rem"}
@@ -44,7 +44,7 @@ const AdminDashboard = () => {
           >
             {/* <CreateFlight />
             <Box m="2rem 0" /> */}
-            <UserWidget userId={_id} picturePath={picturePath} />
+            {/* <UserWidget userId={_id} picturePath={picturePath} /> */}
             {/* <FlightsWidget userId={_id} /> */}
             <Box m="2rem 0" />
           </Box>
@@ -59,10 +59,15 @@ const AdminDashboard = () => {
             <Box m="2rem 0" /> */}
             {/* <FlightsWidget userId={_id} /> */}
             <WidgetWrapper>
-              <Box> {_id} </Box>
-              <Box> {email} </Box>
-              <Box> {viewedProfile**2} </Box>
-
+              <Box> 65f72c2beebe702b17508169 </Box>
+              <Box> admin@falconair.bh </Box>
+              <Box> 41139396 </Box>
+            </WidgetWrapper>
+            <Box m="2rem 0" />
+            <WidgetWrapper>
+              <Box> NaN </Box>
+              <Box> xyz@falconair.bh </Box>
+              <Box> NaN </Box>
             </WidgetWrapper>
             <Box m="2rem 0" />
           </Box>
@@ -77,10 +82,15 @@ const AdminDashboard = () => {
             <Box m="2rem 0" /> */}
             {/* <FlightsWidget userId={_id} /> */}
             <WidgetWrapper>
-              <Box> {_id} </Box>
-              <Box> {email} </Box>
-              <Box> {viewedProfile**2} </Box>
-
+              <Box> NaN </Box>
+              <Box> xyz@falconair.bh </Box>
+              <Box> NaN </Box>
+            </WidgetWrapper>
+            <Box m="2rem 0" />
+            <WidgetWrapper>
+              <Box> NaN </Box>
+              <Box> xyz@falconair.bh </Box>
+              <Box> NaN </Box>
             </WidgetWrapper>
             <Box m="2rem 0" />
           </Box>
