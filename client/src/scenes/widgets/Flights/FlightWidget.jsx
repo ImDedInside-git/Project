@@ -55,7 +55,6 @@ import {
           subtitle={location}
           userPicturePath={userPicturePath}
         />
-        {postUserId}
         <Typography color={main} sx={{ mt: "1rem" }}>
           {description}
         </Typography>
