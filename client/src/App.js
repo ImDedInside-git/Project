@@ -14,6 +14,9 @@ import AdminDashboard from "scenes/adminDashboard"; // Import the AdminDashboard
 // import Test from "scenes/adminDashboard/test.jsx"; // Import the Testing component
 import Test from "scenes/adminDashboard/blank.jsx"; 
 
+import Forbidden from "scenes/adminDashboard/forbidden";
+import NotFound from "scenes/adminDashboard/notfound";
+
 function App() {
   const mode = useSelector((state) => state.mode);
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
@@ -37,11 +40,22 @@ function App() {
               path="/"
               element={isAuth ? <HomePage /> : <Navigate to="/login" />}
             /> */}
+
             <Route
               path="/"
               element={isAuth ? <> {isAdmin ? <AdminDashboard /> : <HomePage />} </> : <Navigate to="/login" />}
             />
             
+
+
+            <Route
+              path="/forbidden"
+              element={isAuth ? <Forbidden /> : <Navigate to="/" />}
+            />
+             <Route
+              path="/notfound"
+              element={isAuth ? <NotFound /> : <Navigate to="/" />}
+            />
             
             <Route
               path="/home"
@@ -61,12 +75,19 @@ function App() {
             />
             <Route
               path="/admin"
-              element={isAuth && isAdmin ? <AdminDashboard /> : <Navigate to="/" />}
+              element={isAuth && isAdmin ? <AdminDashboard /> : <Navigate to="/forbidden" />}
             />
             <Route
               path="/test"
-              element={isAuth && isAdmin ? <Test /> : <Navigate to="/" />}
+              element={isAuth && isAdmin ? <Test /> : <Navigate to="/forbidden" />}
             />
+
+            <Route
+              path="/*"
+              element={isAuth ? <Navigate to="/notfound" /> : <Navigate to="/forbidden" />}
+            />
+           
+
 
 
 
