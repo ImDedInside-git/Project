@@ -49,7 +49,7 @@ function App() {
             />
             <Route
               path="/notfound"
-              element={ <NotFound /> }
+              element={isAuth ? <NotFound /> : <Navigate to="/" />}
             />
             <Route
               path="/*"
