@@ -32,14 +32,9 @@ function App() {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Routes>
+
+            // Route for login and default url pages
             <Route path="/login" element={<LoginPage />} />
-
-            
-
-            {/* <Route
-              path="/"
-              element={isAuth ? <HomePage /> : <Navigate to="/login" />}
-            /> */}
 
             <Route
               path="/"
@@ -47,16 +42,31 @@ function App() {
             />
             
 
-
+            // Routes for 404 and 403 pages
             <Route
               path="/forbidden"
-              element={isAuth ? <Forbidden /> : <Navigate to="/" />}
+              element={!isAdmin ? <Forbidden /> : <Navigate to="/" />}
             />
-             <Route
+            <Route
               path="/notfound"
-              element={isAuth ? <NotFound /> : <Navigate to="/" />}
+              element={ <NotFound /> }
+            />
+            <Route
+              path="/*"
+              element={isAuth ? <Navigate to="/notfound" /> : <Navigate to="/notfound" />}
+            />
+
+            // Routes for admin pages
+            <Route
+              path="/admin"
+              element={isAuth && isAdmin ? <AdminDashboard /> : <Navigate to="/forbidden" />}
+            />
+            <Route
+              path="/test"
+              element={isAuth && isAdmin ? <Test /> : <Navigate to="/forbidden" />}
             />
             
+            // Routes for the rest of the pages
             <Route
               path="/home"
               element={isAuth ? <HomePage /> : <Navigate to="/login" />}
@@ -73,19 +83,9 @@ function App() {
               path="/manage"
               element={isAuth ? <ManagePage /> : <Navigate to="/login" />}
             />
-            <Route
-              path="/admin"
-              element={isAuth && isAdmin ? <AdminDashboard /> : <Navigate to="/forbidden" />}
-            />
-            <Route
-              path="/test"
-              element={isAuth && isAdmin ? <Test /> : <Navigate to="/forbidden" />}
-            />
-
-            <Route
-              path="/*"
-              element={isAuth ? <Navigate to="/notfound" /> : <Navigate to="/forbidden" />}
-            />
+            
+            
+            
            
 
 
