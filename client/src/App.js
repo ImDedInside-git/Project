@@ -38,7 +38,7 @@ function App() {
 
             <Route
               path="/"
-              element={isAuth ? <> {isAdmin ? <AdminDashboard /> : <HomePage />} </> : <Navigate to="/login" />}
+              element={isAuth ? <HomePage /> : <Navigate to="/login" />}
             />
             
 
@@ -83,19 +83,19 @@ function App() {
               path="/manage"
               element={isAuth ? <ManagePage /> : <Navigate to="/login" />}
             />
+
+
+
+
+            // [ TEMP ] Route for profile page                
             
-            
-            
-           
-
-
-
-
-            {/* <Route
+            <Route
               path="/profile/:userId"
               element={isAuth ? <ProfilePage /> : <Navigate to="/" />}
-            /> */}
+            />
           </Routes>
+
+          
         </ThemeProvider>
       </BrowserRouter>
     </div>

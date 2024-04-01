@@ -33,7 +33,6 @@ const AdminDashboard = () => {
             mt={isNonMobileScreens ? undefined : "2rem"}
           >
             <CreateFlight />
-            {/* <AdminHome /> */}
 
           </Box>
         </Box>
