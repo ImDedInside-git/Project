@@ -8,7 +8,6 @@ const BookingWidget = () => {
   const dark = palette.neutral.dark;
   const main = palette.neutral.main;
   const medium = palette.neutral.medium;
-
   
   return (
     <WidgetWrapper>
