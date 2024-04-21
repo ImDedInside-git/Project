@@ -1,7 +1,7 @@
 import { Typography, useTheme } from "@mui/material";
-import FlexBetween from "components/FlexBetween";
-import WidgetWrapper from "components/WidgetWrapper";
-import Book from "../../components/Book.jsx";
+import FlexBetween from "components/FlexBetween.jsx";
+import WidgetWrapper from "components/WidgetWrapper.jsx";
+import Book from '../../components/Book'; // Relative path from index.jsx to Book.js
 
 const BookingWidget = () => {
   const { palette } = useTheme();
@@ -9,6 +9,7 @@ const BookingWidget = () => {
   const main = palette.neutral.main;
   const medium = palette.neutral.medium;
 
+  
   return (
     <WidgetWrapper>
       <FlexBetween>

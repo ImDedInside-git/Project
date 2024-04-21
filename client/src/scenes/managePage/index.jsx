@@ -25,7 +25,6 @@ import PostsWidget from "scenes/widgets/PostsWidget";
 import ManageWidget from "scenes/widgets/ManageWidget";
 
 // import FriendListWidget from "scenes/widgets/FriendListWidget";
-import Book from "../../components/Book.jsx";
 import Footer from "scenes/footer";
 
 const CheckInPage = () => {
