@@ -14,9 +14,9 @@ import {
 import { useSelector } from "react-redux";
 import { setMode, setLogout } from "state";
 import { useNavigate } from "react-router-dom";
-import FlexBetween from "components/FlexBetween";
+import FlexBetween from "components/FlexBetween.jsx";
 
-import WidgetWrapper from "components/WidgetWrapper";
+import WidgetWrapper from "components/WidgetWrapper.jsx";
 import Slideshow from "scenes/widgets/Slideshows/Slideshow2.jsx";
 
 import UserWidget from "scenes/widgets/UserWidget";
@@ -25,7 +25,7 @@ import PostsWidget from "scenes/widgets/PostsWidget";
 import CheckInWidget from "scenes/widgets/CheckInWidget";
 
 // import FriendListWidget from "scenes/widgets/FriendListWidget";
-import Book from "../../components/Book.jsx";
+// import Book from '../../components/Book'; // Relative path from index.jsx to Book.js
 import Footer from "scenes/footer";
 
 const CheckInPage = () => {
