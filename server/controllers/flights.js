@@ -1,4 +1,4 @@
-import Flight from '../models/flights.js';
+import Flight from '../models/Flights.js';
 
 // Get all flights
 const getAllFlights = async (req, res) => {

@@ -16,7 +16,7 @@ import flightsRoutes from "./routes/flights.js";
 import { verifyToken } from "./middleware/auth.js";
 import { createFlight } from "./controllers/flights.js";
 import User from "./models/User.js";
-import Flights from "./models/flights.js";
+import Flights from "./models/Flights.js";
 import { users, flights } from "./data/index.js";
 import postRoutes from "./routes/posts.js";
 import { createPost } from "./controllers/posts.js";
