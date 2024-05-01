@@ -1,6 +1,6 @@
 import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
-import FlexBetween from "components/FlexBetween";
-import WidgetWrapper from "components/WidgetWrapper";
+import FlexBetween from "components/FlexBetween.jsx";
+import WidgetWrapper from "components/WidgetWrapper.jsx";
 import CheckIn from "../../components/CheckIn.jsx";
 
 const BookingWidget = () => {

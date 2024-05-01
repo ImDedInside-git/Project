@@ -14,16 +14,16 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { setMode, setLogout } from "state";
 import { useNavigate } from "react-router-dom";
-import FlexBetween from "components/FlexBetween";
+import FlexBetween from "components/FlexBetween.jsx";
 import UserWidget from "scenes/widgets/UserWidget";
 import MyPostWidget from "scenes/widgets/MyPostWidget";
 import PostsWidget from "scenes/widgets/PostsWidget";
 import AdvertWidget1 from "scenes/widgets/Ads/AdvertWidget1.jsx";
 import AdvertWidget2 from "scenes/widgets/Ads/AdvertWidget2.jsx";
 // import FriendListWidget from "scenes/widgets/FriendListWidget";
-import Book from "../../components/Book.jsx";
+import Book from '../../components/Book'; // Relative path from index.jsx to Book.js
 import Footer from "scenes/footer";
-import WidgetWrapper from "components/WidgetWrapper";
+import WidgetWrapper from "components/WidgetWrapper.jsx";
 import Slideshow from "scenes/widgets/Slideshows/Slideshow2.jsx";
 
 const HomePage = () => {
