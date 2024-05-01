@@ -6,6 +6,8 @@ import UserWidget from 'scenes/widgets/UserWidget';
 import { useSelector } from "react-redux";
 import CreateFlight from 'scenes/widgets/Admin/CreateFlightWidget';
 import WidgetWrapper from 'components/WidgetWrapper';
+// import "/node_modules/flag-icons/css/flag-icons.min.css";
+
 
 
 
@@ -19,6 +21,8 @@ const AdminDashboard = () => {
   return (
     <Box>
       <Navbar />
+      <span class="fi fi-bh"></span> 
+      {/* <span class="fi fi-bh fis"></span> */}
       
       <Box
         width="100%"

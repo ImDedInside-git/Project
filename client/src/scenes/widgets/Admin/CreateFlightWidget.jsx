@@ -6,8 +6,7 @@ const CreateFlightWidget = () => {
   return (
 
     <WidgetWrapper>
-      <b>Create Flight (ADMIN)</b>
-      <br /><br />
+      {/* <b>Create Flight (ADMIN)</b> */}
       <AddFlights />
     </WidgetWrapper>
   )

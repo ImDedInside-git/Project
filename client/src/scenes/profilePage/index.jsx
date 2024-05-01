@@ -32,15 +32,16 @@ const ProfilePage = () => {
       <Navbar />
       <Box
         width="100%"
-        padding="2rem 6%"
+        padding="6rem 5%"
         display={isNonMobileScreens ? "flex" : "block"}
         gap="2rem"
-        justifyContent="center"
+        // justifyContent="center"
       >
-        <Box flexBasis={isNonMobileScreens ? "26%" : undefined}>
+        <Box flexBasis={isNonMobileScreens ? "35%" : undefined}>
           <UserWidget userId={userId} picturePath={user.picturePath} />
           <Box m="2rem 0" />
-          <FriendListWidget userId={userId} />
+          {/* <FriendListWidget userId={userId} /> */}
+          ADD BOOKINGS HERE
         </Box>
         <Box
           flexBasis={isNonMobileScreens ? "42%" : undefined}
