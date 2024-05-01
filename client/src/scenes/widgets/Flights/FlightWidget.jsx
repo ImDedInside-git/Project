@@ -52,11 +52,11 @@ import {
         <Friend
           friendId={postUserId}
           name={name}
-          subtitle={location}
+          subtitle={description}
           userPicturePath={userPicturePath}
         />
         <Typography color={main} sx={{ mt: "1rem" }}>
-          {description}
+          {/* {description} */}
         </Typography>
         {picturePath && (
           <img
@@ -67,7 +67,7 @@ import {
             src={`http://localhost:3001/assets/${picturePath}`}
           />
         )}
-        <FlexBetween mt="0.25rem">
+        {/* <FlexBetween mt="0.25rem">
           <FlexBetween gap="1rem">
             <FlexBetween gap="0.3rem">
               <IconButton onClick={patchLike}>
@@ -88,11 +88,9 @@ import {
             </FlexBetween>
           </FlexBetween>
   
-          <IconButton>
-            <ShareOutlined />
-          </IconButton>
-        </FlexBetween>
-        {isComments && (
+          
+        </FlexBetween> */}
+        {/* {isComments && (
           <Box mt="0.5rem">
             {comments.map((comment, i) => (
               <Box key={`${name}-${i}`}>
@@ -104,7 +102,7 @@ import {
             ))}
             <Divider />
           </Box>
-        )}
+        )} */}
       </WidgetWrapper>
     );
   };

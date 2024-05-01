@@ -24,6 +24,7 @@ import WidgetWrapper from "components/WidgetWrapper";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "state";
+import CreateFlightWidget from "./Admin/CreateFlightWidget";
 
 const MyPostWidget = ({ picturePath }) => {
   const dispatch = useDispatch();
@@ -62,7 +63,7 @@ const MyPostWidget = ({ picturePath }) => {
       <FlexBetween gap="1.5rem">
         <UserImage image={picturePath} />
         <InputBase
-          placeholder="What's on your mind..."
+          placeholder="Add Flight Details..."
           onChange={(e) => setPost(e.target.value)}
           value={post}
           sx={{
@@ -117,11 +118,13 @@ const MyPostWidget = ({ picturePath }) => {
           </Dropzone>
         </Box>
       )}
+            <Divider sx={{ margin: "1.25rem 0" }} />
 
-      <Divider sx={{ margin: "1.25rem 0" }} />
 
-      <FlexBetween>
-        <FlexBetween gap="0.25rem" onClick={() => setIsImage(!isImage)}>
+
+      {/* <FlexBetween> */}
+        <CreateFlightWidget />
+        {/* <FlexBetween gap="0.25rem" onClick={() => setIsImage(!isImage)}>
           <ImageOutlined sx={{ color: mediumMain }} />
           <Typography
             color={mediumMain}
@@ -153,19 +156,29 @@ const MyPostWidget = ({ picturePath }) => {
             <MoreHorizOutlined sx={{ color: mediumMain }} />
           </FlexBetween>
         )}
-
+        */}
+        <Divider sx={{ margin: "1.25rem 0" }} />
         <Button
+          fullWidth
           disabled={!post}
           onClick={handlePost}
           sx={{
+            m: "2rem 0",
+            p: "1rem",
             color: palette.background.alt,
             backgroundColor: palette.primary.main,
             borderRadius: "3rem",
+            "&:hover": { color: palette.primary.main },
+
           }}
         >
-          POST
-        </Button>
-      </FlexBetween>
+          TEMP_PLACEHOLDER
+        </Button> 
+        
+
+
+        
+      {/* </FlexBetween> */}
     </WidgetWrapper>
   );
 };
