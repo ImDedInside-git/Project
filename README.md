@@ -14,7 +14,7 @@ Welcome to Falcon Airlines, a flight booking website developed as a Minor Projec
    - [ ] Personalized dashboard for users to manage their bookings and view flight details.
    - [ ] Detailed information about available flights, including departure and arrival times, airline details, and pricing.
 
-## Installation
+## Build
 
 Follow these steps to set up the Falcon Airlines project locally:
 
@@ -22,21 +22,32 @@ Follow these steps to set up the Falcon Airlines project locally:
    ```bash
    git clone https://github.com/imdedinside-081/Project.git
    ```
-2. **Start the server**  
-  Change directory to `Project/server` then start the server 
+2. **Install dependencies for the server**  
    ```bash
    cd Project/server
    npm install
-   npm run start
    ```
-3. **Start the client**  
-  In a new terminal window, change directory to `Project/client` then start the front end
+3. **Install dependencies for the client**  
    ```bash
    cd Project/client
    npm install
+   ```
+
+## Starting the application
+1. **Starting the server**
+   ```bash
+   cd server
    npm run start
    ```
-4. **Access the Application:**
+2. **Starting the client application**
+   ```bash
+   cd client
+   npm run start
+   ```
+
+
+
+**Access the Application:**
 
     Open your browser and go to http://localhost:3000 to view the Falcon Airlines website.
 
