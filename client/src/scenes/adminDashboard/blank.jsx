@@ -43,8 +43,8 @@ const AdminDashboard = () => {
             flexBasis={isNonMobileScreens ? "35%" : undefined}
             mt={isNonMobileScreens ? undefined : "2rem"}
           >
-            {/* <CreateFlight />
-            <Box m="2rem 0" /> */}
+            {/* <CreateFlight /> */}
+            <Box m="2rem 0" />
             {/* <UserWidget userId={_id} picturePath={picturePath} /> */}
             <MyPostWidget picturePath={picturePath} />
             <FlightsWidget userId={_id} />

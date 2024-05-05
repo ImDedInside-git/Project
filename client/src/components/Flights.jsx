@@ -39,7 +39,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
   return (
     <FlexBetween>
       <FlexBetween gap="1rem">
-        <UserImage image={userPicturePath} size="55px" />
+        {/* <UserImage image={userPicturePath} size="55px" /> */}
         <Box
           // onClick={() => {
           //   navigate(`/profile/${friendId}`);
@@ -57,7 +57,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
               },
             }}
           >
-            {name} 
+            {/* {name}  */}
           </Typography>
           <Typography color={medium} fontSize="0.75rem">
             {subtitle}

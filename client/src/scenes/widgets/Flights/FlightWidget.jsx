@@ -67,9 +67,9 @@ import {
             src={`http://localhost:3001/assets/${picturePath}`}
           />
         )}
-        {/* <FlexBetween mt="0.25rem">
+        <FlexBetween mt="0.25rem">
           <FlexBetween gap="1rem">
-            <FlexBetween gap="0.3rem">
+            {/* <FlexBetween gap="0.3rem">
               <IconButton onClick={patchLike}>
                 {isLiked ? (
                   <FavoriteOutlined sx={{ color: primary }} />
@@ -78,31 +78,11 @@ import {
                 )}
               </IconButton>
               <Typography>{likeCount}</Typography>
-            </FlexBetween>
-  
-            <FlexBetween gap="0.3rem">
-              <IconButton onClick={() => setIsComments(!isComments)}>
-                <ChatBubbleOutlineOutlined />
-              </IconButton>
-              <Typography>{comments.length}</Typography>
-            </FlexBetween>
+            </FlexBetween> */}
           </FlexBetween>
   
           
-        </FlexBetween> */}
-        {/* {isComments && (
-          <Box mt="0.5rem">
-            {comments.map((comment, i) => (
-              <Box key={`${name}-${i}`}>
-                <Divider />
-                <Typography sx={{ color: main, m: "0.5rem 0", pl: "1rem" }}>
-                  {comment}
-                </Typography>
-              </Box>
-            ))}
-            <Divider />
-          </Box>
-        )} */}
+        </FlexBetween>
       </WidgetWrapper>
     );
   };
