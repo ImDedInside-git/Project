@@ -16,7 +16,6 @@ import { setMode, setLogout } from "state";
 import { useNavigate } from "react-router-dom";
 import FlexBetween from "components/FlexBetween.jsx";
 import UserWidget from "scenes/widgets/UserWidget";
-import MyPostWidget from "scenes/widgets/MyPostWidget";
 import PostsWidget from "scenes/widgets/PostsWidget";
 import AdvertWidget1 from "scenes/widgets/Ads/AdvertWidget1.jsx";
 import AdvertWidget2 from "scenes/widgets/Ads/AdvertWidget2.jsx";
@@ -25,6 +24,10 @@ import Book from '../../components/Book'; // Relative path from index.jsx to Boo
 import Footer from "scenes/footer";
 import WidgetWrapper from "components/WidgetWrapper.jsx";
 import Slideshow from "scenes/widgets/Slideshows/Slideshow2.jsx";
+import FlightsWidget from 'scenes/widgets/Flights/FlightsWidget';
+import MyPostWidget from 'scenes/widgets/MyPostWidget';
+
+
 
 const HomePage = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
@@ -59,10 +62,13 @@ const HomePage = () => {
               <Book />
             </WidgetWrapper>
           </Box>
+          
 
           <Box m="2rem 0">
             {/* <UserWidget userId={_id} picturePath={picturePath} /> */}
           </Box>
+          {/* <MyPostWidget picturePath={picturePath} /> */}
+          {/* <FlightsWidget userId={_id} /> */}
         </Box>
 
         <Box m="2rem 0">
@@ -76,6 +82,9 @@ const HomePage = () => {
             <Box m="2rem 0" />
           </Box>
         )}
+      </Box>
+      <Box>
+        
       </Box>
       <Footer />
     </Box>

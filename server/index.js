@@ -90,7 +90,7 @@ mongoose
       console.log(`Server running on Port ${PORT}: http://localhost:${PORT}`)
     );
 
-    // ! ADD DATA **RUN ONCE ONLY**
+    // ! ADD DATA **RUN ONLY ONCE; else causes duplicate values**
     // User.insertMany(users);
     // Flights.insertMany(flights);
   })
