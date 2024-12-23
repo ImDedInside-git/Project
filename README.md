@@ -9,10 +9,10 @@ Welcome to Falcon Airlines, a flight booking website developed as a Minor Projec
 
    - [x] User registration and authentication.
    - [x] Homepage, footer, navbar (Cosmetics)
-   - [ ] Search for flights based on destination, date, and other criteria.
-   - [ ] Browse available flights and select preferred options for booking.
+   - [x] Search for flights based on destination, date, and other criteria.
+   - [x] Browse available flights and select preferred options for booking.
    - [ ] Personalized dashboard for users to manage their bookings and view flight details.
-   - [ ] Detailed information about available flights, including departure and arrival times, airline details, and pricing.
+   - [x] Detailed information about available flights, including departure and arrival times, airline details, and pricing.
 
 ## Build
 
@@ -69,7 +69,7 @@ Follow these steps to set up the Falcon Airlines project locally:
   - Redux for state management
 
 
-## Planned Future Enhancements
+## Planned Future Enhancements [Abandoned due to time crunch]
 
 - [ ] Include additional features such as seat selection and meal preferences.
 - [ ] Enhance the user interface for a more intuitive experience.
